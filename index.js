@@ -28,8 +28,14 @@ app.get('/new', (req,res) =>{
     res.render('new')
 })
 
+app.post('/', (req,res) =>{
+    console.log(req.body)
+})
+
+
 app.get('/:indexOfBudgetItems', (req,res) =>{
     res.render('show',{
         item:budgetItems[req.params.indexOfBudgetItems]
     })
 })
+
