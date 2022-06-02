@@ -26,9 +26,14 @@ app.get("/budgets",(req,res) => {
 app.get("/budgets/new",(req,res) => {
     res.send("This is the - '/budgets/new GET' - path")
 })
+//
 app.get("/budgets/:index",(req,res) => {
-    res.send("This is the - '/budgets/:index GET' - path")
+    // res.send("This is the - '/budgets/:index GET' - path")
+    res.render("show",{
+        budgetItem: Budget[req.params.index]
+    })
 })
+// show individual page for each budget item
 app.post("/budgets",(req,res) => {
     res.send("This is the - '/budgets POST' - path")
 })
