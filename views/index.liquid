@@ -13,7 +13,7 @@
             {%for item in allBudgetItems%}
             <tr>
                 <td>{{item.date}}</td>
-                <td><a href="#">{{item.name}}</a></td>
+                <td><a href="/{{forloop.index0}}">{{item.name}}</a></td>
                 <td>{{item.from}}</td>
                 <td>{{item.amount}}</td>
                 <td>{{item.tags}}</td>
