@@ -1,5 +1,5 @@
 //Variables
-module.exports = [
+const budget = [
   {
     date: "April 1",
     name: "Income",
@@ -72,3 +72,4 @@ module.exports = [
   }
 ]
 
+module.exports = budget

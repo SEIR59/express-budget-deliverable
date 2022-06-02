@@ -7,7 +7,27 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Testing</h1>
-    
+    <div class="container">
+        <h1>Budget All</h1>
+        <table>
+            {%for budget in allBudgetItems %}
+                {% comment %} //row {% endcomment %}
+                <tr>
+                    {% comment %} //data cell     {% endcomment %}
+                    <td>
+                        {{budget.date}}
+                    </td>
+                 
+                    <td>
+                        <a href="/budget/{{ forloop.index0}}">{{ budget.name }}</a> 
+                    </td>
+                
+                    <td>
+                        {{budget.amount}}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
 </body>
 </html>
