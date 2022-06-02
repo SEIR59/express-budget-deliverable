@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,22 +9,38 @@
     <link rel="stylesheet" href="/skeleton.css">
     <title>index</title>
 </head>
+
 <body>
     <div class="container">
         <h1>Budgtr ALL</h1>
         <table>
             {% for expenditure in Budget%}
-            <tr>
-                <td>{{expenditure.date}}</td>
-                <td><a href="/{{forloop.index0}}">{{expenditure.name}}</a></td>
-                <td>{{expenditure.amount}}</td>
-            </tr>
+                {% assign bankAccount = expenditure.amount%}
+                {% if bankAccount < 0 %}
+                    <tr style="background: pink;">
+                        <td>{{expenditure.date}}</td>
+                        <td><a href="/{{forloop.index0}}">{{expenditure.name}}</a></td>
+                        <td>{{expenditure.amount}}</td>
+                    </tr>
+                {% elsif bankAccount > 1000%}
+                    <tr style="background: lightgreen;">
+                        <td>{{expenditure.date}}</td>
+                        <td><a href="/{{forloop.index0}}">{{expenditure.name}}</a></td>
+                        <td>{{expenditure.amount}}</td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td>{{expenditure.date}}</td>
+                        <td><a href="/{{forloop.index0}}">{{expenditure.name}}</a></td>
+                        <td>{{expenditure.amount}}</td>
+                    </tr>
+                {% endif %}
             {% endfor %}
         </table>
         <form action="/new" method="post">
             <button type="submit">New</button>
         </form>
     </div>
-    
 </body>
+
 </html>
