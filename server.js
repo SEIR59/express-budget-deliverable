@@ -14,5 +14,5 @@ app.use(express.static('public')); // to use css
 
 // checking if this works
 app.get("/", (request, response) => {
-    response.send("Hello World")
+    response.render('index')
 })
