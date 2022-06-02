@@ -12,24 +12,20 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
     />
-    <title>Index</title>
+    <title>Show</title>
   </head>
   <body>
     <div class="container">
-      <h1>Budgtr ALL</h1>
-      <table class="u-full-width">
-        <tbody>
-          {% for item in Budget %}
-          <tr>
-            <td>{{ item.date }}</td>
-            <td>
-              <a href="/budgets/{{ forloop.index0 }}">{{ item.name }}</a>
-            </td>
-            <td>{{ item.amount }}</td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
+      <a href="/budgets"><button class="button-primary">Back</button></a>
+      <h1>{{ budget.name }}</h1>
+      <h3>Date: {{ budget.date }}</h3>
+      <h3>Name: {{ budget.name }}</h3>
+      <h3>From: {{ budget.from }}</h3>
+      <h3>amount: {{ budget.amount }}</h3>
+      <h3>
+        tags: {% for tag in budget.tags %}
+        {{ tag }}, {% endfor %}
+      </h3>
     </div>
   </body>
 </html>

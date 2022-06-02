@@ -15,7 +15,9 @@ app.get('/budgets', (req, res) => {
 });
 
 //? Show route
-app.get('/budgets/:index', (req, res) => {});
+app.get('/budgets/:index', (req, res) => {
+    res.render('show', {budget: Budget[req.params.index]})
+});
 
 //? New route
 app.get('/budgets/new', (req, res) => {});
