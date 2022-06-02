@@ -22,15 +22,23 @@ app.use(express.urlencoded({extended:false}));
 
 
 
-
-
-app.get("/", (req, res) => {
+app.get("/budget", (req, res) => {
   res.render(
     "index", //index.Liquid 
     {
       //controller
       allBudgetItems: Budget
     })
+})
+
+app.get('/budget/new', (req, res) => {
+  res.render('new')
+})
+
+app.get("/budget/:indexOfBudget", (req, res) => {
+  res.render("show", {
+    budgetItem: Budget[req.params.indexOfBudget]
+  })
 })
 
 
