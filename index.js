@@ -15,7 +15,8 @@ let bankAccount = 0;
 
 let addMoney = () =>{
     for(item of budgetItems){
-        bankAccount += item.amount
+        itemnum = Number(item.amount)
+        bankAccount += itemnum
     }
 }
 addMoney()
