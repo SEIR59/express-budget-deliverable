@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css ">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Document</title>
 </head>
 <body>
-    <div class="container">
+    {%if money >= 1000%}
+    <div class="green-container container">
         <h1>Budget Items</h1>
         <h2>Bank Account: {{money}}</h2>
         <table>
@@ -29,5 +31,27 @@
         </table>
         <button onclick="location.href = '/new'" >Create New Item</button>
     </div>
+    {%else%}
+    <div class="red-container container">
+        <h1>Budget Items</h1>
+        <h2>Bank Account: {{money}}</h2>
+        <table>
+            {%for item in allBudgetItems%}
+            <tr>
+                <td>{{item.date}}</td>
+                <td><a href="/{{forloop.index0}}">{{item.name}}</a></td>
+                <td>{{item.from}}</td>
+                <td>{{item.amount}}</td>
+                <td>
+                {%for tag in item.tags%}
+                {{tag}},
+                {% endfor%}
+                </td>
+            </tr>
+            {%endfor%}
+        </table>
+        <button onclick="location.href = '/new'" >Create New Item</button>
+    </div>
+    {%endif%}
 </body>
 </html>

@@ -2,6 +2,7 @@ const express = require('express')
 const app = require('liquid-express-views')(express())
 const port = 3000;
 
+
 app.use((req, res, next) => {
     console.log('I run for all routes');
     next();
@@ -18,6 +19,7 @@ let addMoney = () =>{
         itemnum = Number(item.amount)
         bankAccount += itemnum
     }
+
 }
 addMoney()
 
