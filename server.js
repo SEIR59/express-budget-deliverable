@@ -18,10 +18,11 @@ app.get("/",(req,res) => {
 
 app.get("/budgets",(req,res) => {
     // res.send("This is the - '/budgets GET' - path")
-    req.render("index",() => {
-        Budget: Budget
+    res.render("index",{
+        BudgetList: Budget
     })
 })
+
 app.get("/budgets/new",(req,res) => {
     res.send("This is the - '/budgets/new GET' - path")
 })
