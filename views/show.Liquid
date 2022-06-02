@@ -5,17 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="/public/normalize.css">
-    <link rel="stylesheet" href="/public/skeleton.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
-    <title>Index</title>
+    <title>Show</title>
 </head>
 
 <body>
     <div class="container">
 
-        <h1>Budgtr ALL</h1>
+        <h1>{{ budgetItem.name }}</h1>
+
+        <a href="/">
+            <button type="">BACK</button>
+        </a>
 
         <table>
             {% for budgetItem in allBudgetItems %}
@@ -24,7 +26,7 @@
                     {{ budgetItem.date }}
                 </td>
                 <td>
-                    <a href="/{{ forloop.index0 }}">{{ budgetItem.name }}</a>
+                    <a href="/">{{ budgetItem.name }}</a>
                 </td>
                 <td>
                     {{ budgetItem.amount }}

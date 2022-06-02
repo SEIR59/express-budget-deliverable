@@ -10,6 +10,13 @@ app.get('/', (req, res) => {
     })
 })
 
+app.get('/:index', (req, res) => {
+    res.render('show', 
+    {
+        budgetItem : budget[req.params.index]
+    })
+})
+
 app.listen(port, () => {
     console.log('listening on port: ' + port)
 })
