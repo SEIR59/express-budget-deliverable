@@ -17,8 +17,12 @@ app.get('/', (req, res) => {
 })
 
 app.get('/budget', (req, res) => {
-    res.render("index")
+    res.render("index", {
+        budget: budget
+    })
+
 })
+
 
 
 
