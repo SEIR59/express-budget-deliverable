@@ -9,13 +9,41 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Test</h1>
     <div class="container">
-    
-    <h1>
-        {{}}
-    </h1>
-    
+        <h1>{{budgetItem.name}}</h1>
+        <button>
+        <a href="/budget">BACK</a>
+        </button>
+    <h5>
+        Date
+    </h5>
+    <h6>
+        {{budgetItem.date}}
+     </h6>
+     <h5>
+        Name
+    </h5>
+    <h6>
+        {{budgetItem.name}}
+     </h6>
+     <h5>
+        from
+    </h5>
+    <h6>
+        {{budgetItem.from}}
+     </h6>
+     <h5>
+        amount
+    </h5>
+    <h6>
+        {{budgetItem.amount}}
+     </h6>
+     <h5>
+        tags
+    </h5>
+    <h6>
+        {{budgetItem.tags}}, 
+     </h6>
     </div>
 </body>
 </html>
