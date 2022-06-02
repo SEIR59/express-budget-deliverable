@@ -1,3 +1,4 @@
+//Variables
 module.exports = [
   {
     date: "April 1",
@@ -70,3 +71,4 @@ module.exports = [
     tags: ["pets"]
   }
 ]
+
