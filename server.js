@@ -7,6 +7,7 @@ app.use(expr.urlencoded({extended: false}))
 // sets public as the default file to search in for files (ex: .css/.js)
 app.use(expr.static("public"))
 
+const Budget = require("./models/budget.js")
 
 /*====================
         Routes
@@ -16,7 +17,10 @@ app.get("/",(req,res) => {
 })
 
 app.get("/budgets",(req,res) => {
-    res.send("This is the - '/budgets GET' - path")
+    // res.send("This is the - '/budgets GET' - path")
+    req.render("index",() => {
+        Budget: Budget
+    })
 })
 app.get("/budgets/new",(req,res) => {
     res.send("This is the - '/budgets/new GET' - path")
