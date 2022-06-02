@@ -1,4 +1,5 @@
 const express = require('express')
+const Budget = require('./models/budget')
 const app = require('liquid-express-views')(express())
 const port = 3000
 
@@ -22,7 +23,7 @@ app.post('/budgets', (req, res) => {
 
 app.get('/budgets', (req, res) => {
     res.render('index', {
-
+        budget: Budget
     })
 })
 
