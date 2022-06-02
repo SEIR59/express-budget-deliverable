@@ -12,11 +12,22 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
     />
+    <link rel="stylesheet" href="/css/app.css" />
     <title>Index</title>
   </head>
   <body>
     <div class="container">
-      <h1>Budgtr ALL</h1>
+      <hr />
+
+      {% if bankAccount < 0 %}
+      <h1 id="red">Bank Account Balance: {{ bankAccount }}</h1>
+      {% elsif bankAccount > 1000 %}
+      <h1 id="green">Bank Account Balance: {{ bankAccount }}</h1>
+      {% else %}
+      <h1>Bank Account Balance: {{ bankAccount }}</h1>
+      {% endif %}
+      <hr />
+      <h2>Budgtr ALL</h2>
       <table class="u-full-width">
         <tbody>
           {% for item in Budget %}
@@ -30,6 +41,8 @@
           {% endfor %}
         </tbody>
       </table>
+      <br />
+      <a href="/budgets/new"><button class="button-primary">Create</button></a>
     </div>
   </body>
 </html>

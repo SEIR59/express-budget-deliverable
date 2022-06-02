@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
+    />
+    <title>New</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Add New Budget Form</h1>
+      <!-- The above form looks like this -->
+      <form action="/budgets" method="POST">
+        <div class="row">
+          <div class="eight columns">
+            <div>
+              <label for="date">Date</label>
+              <input class="u-full-width" type="date" name="date" />
+            </div>
+            <div>
+              <label for="name">Name</label>
+              <input
+                class="u-full-width"
+                type="text"
+                placeholder="Enter Name"
+                name="name"
+              />
+            </div>
+
+            <div>
+              <label for="from">From</label>
+              <input
+                class="u-full-width"
+                type="text"
+                placeholder="Enter From"
+                name="from"
+              />
+            </div>
+
+            <div>
+              <label for="amount">Amount</label>
+              <input
+                class="u-full-width"
+                type="number"
+                placeholder="Enter Amount"
+                name="amount"
+              />
+            </div>
+
+            <div>
+              <label for="tags">Tags</label>
+              <input
+                class="u-full-width"
+                type="text"
+                placeholder="Enter Tags"
+                name="tags"
+              />
+            </div>
+          </div>
+        </div>
+
+        <input class="button-primary" type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+</html>
