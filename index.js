@@ -24,6 +24,10 @@ app.get('/', (req,res) =>{
    res.render('index',{allBudgetItems: budgetItems})
 })
 
+app.get('/new', (req,res) =>{
+    res.render('new')
+})
+
 app.get('/:indexOfBudgetItems', (req,res) =>{
     res.render('show',{
         item:budgetItems[req.params.indexOfBudgetItems]
