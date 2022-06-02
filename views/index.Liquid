@@ -17,7 +17,17 @@
 
         <h1>Budgtr ALL</h1>
 
-        <h3>{{ balance }}</h3>
+        {% if balance.amount < 0 %}
+        <h3 style="background-color: red;">{{ balance.amount }}</h3>
+        {% endif %}
+
+        {% if balance.amount > 1000 %}
+        <h3 style="background-color: green;">{{ balance.amount }}</h3>
+        {% endif %}
+
+        {% if balance.amount > 0 and balance.amount < 1000 %}
+        <h3 style="background-color: white;">{{ balance.amount }}</h3>
+        {% endif %}
 
         <table>
             {% for budgetItem in allBudgetItems %}
