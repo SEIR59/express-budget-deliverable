@@ -12,12 +12,15 @@
     <div class="container">
         <h1>Add a new item</h1>
         <form action="/budgets" method="POST">
-            <input type="text" placeholder="Date"><br />
-            <input type="text" placeholder="Name"><br />
-            <input type="text" placeholder="From"><br />
-            <input type="number" placeholder="Amount"><br />
-            <input type="text" placeholder="Tags"><br />
-            <input type="button" value="Create New Item">
+            <input type="text" placeholder="Date" name="date"><br />
+            <input type="text" placeholder="Name" name="name"><br />
+            <input type="text" placeholder="From" name="from"><br />
+            <input type="number" placeholder="Amount" name="amount"><br />
+            <input type="text" placeholder="Tags" name="tags"><br />
+            <input type="submit" value="Create New Item">
+        </form>
+        <form action="/budgets">
+            <button>Back to Main Screen</button>
         </form>
     </div>
 </body>

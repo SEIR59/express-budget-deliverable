@@ -7,7 +7,7 @@ app.use(expr.urlencoded({extended: false}))
 // sets public as the default file to search in for files (ex: .css/.js)
 app.use(expr.static("public"))
 
-const Budget = require("./models/budget.js")
+const arrBudget = require("./models/budget.js")
 
 /*====================
         Routes
@@ -19,7 +19,7 @@ app.get("/",(req,res) => {
 app.get("/budgets",(req,res) => {
     // res.send("This is the - '/budgets GET' - path")
     res.render("index",{
-        BudgetList: Budget
+        BudgetList: arrBudget
     })
 })
 
@@ -31,18 +31,21 @@ app.get("/budgets/new",(req,res) => {
 app.get("/budgets/:index",(req,res) => {
     // res.send("This is the - '/budgets/:index GET' - path")
     res.render("show",{
-        budgetItem: Budget[req.params.index]
+        budgetItem: arrBudget[req.params.index]
     })
 })
 // show individual page for each budget item
 app.post("/budgets",(req,res) => {
+    // res.send("This is the - '/budgets POST' - path")
     let reqData = req.body
-    
-
-
-
-
-    res.send("This is the - '/budgets POST' - path")
+    console.log(reqData)
+    let arrTags = reqData.tags.split(", ")
+    reqData.tags = arrTags
+    arrBudget.push(reqData)
+    console.log(arrBudget)
+    res.render("index",{
+        BudgetList: arrBudget
+    })
 })
 
 
