@@ -14,14 +14,18 @@ app.use(express.urlencoded({extended:false}));
 
 
 // Routes
-app.get('/', (req, res) => {
+app.get('/budget', (req, res) => {
     res.render('index', 
     {
         allBudgetItems : budget
     })
 })
 
-app.get('/:index', (req, res) => {
+app.get('/budget/new', (req, res) => {
+    res.render('new')
+})
+
+app.get('/budget/:index', (req, res) => {
     res.render('show', 
     {
         budgetItem : budget[req.params.index]

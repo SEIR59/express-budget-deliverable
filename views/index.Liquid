@@ -24,7 +24,7 @@
                     {{ budgetItem.date }}
                 </td>
                 <td>
-                    <a href="/{{ forloop.index0 }}">{{ budgetItem.name }}</a>
+                    <a href="/budget/{{ forloop.index0 }}">{{ budgetItem.name }}</a>
                 </td>
                 <td>
                     {{ budgetItem.amount }}
@@ -33,7 +33,7 @@
             {% endfor %}
         </table>
 
-        <a href="/new">
+        <a href="/budget/new">
             <button>ADD NEW ITEM</button>
         </a>
     </div>
