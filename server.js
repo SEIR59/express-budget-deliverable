@@ -37,8 +37,14 @@ app.get('/show/:index',(req,res) =>{
 
 app.get('/new', (req, res)=>{
     res.render('new')
-    // budget.push(req.body);
-    // console.log(budget);
+   
+});
+
+
+app.post('/new', (req, res)=>{
+    
+    budget.push(req.body);
+   console.log(req.body);
     // res.send('data received');
-    // res.redirect('/new');
+    res.redirect('/index');
 });
