@@ -22,6 +22,13 @@ app.get("/", (request, response) => {
     })
 })
 
+// creating new expenditure
+app.post("/create", (request, response) => {
+    Budget.push(request.body)
+    response.redirect("/")
+})
+
+
 // rendering the expenditure details
 app.get("/:id", (request, response) => {
     response.render('show', {
@@ -33,4 +40,9 @@ app.get("/:id", (request, response) => {
 // going back button
 app.post("/next", (request, response) => {
     response.redirect("/")
+})
+
+// new page button
+app.post("/new", (request, response) => {
+    response.render("new")
 })
