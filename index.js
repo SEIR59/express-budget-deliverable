@@ -12,9 +12,13 @@ app.use(express.urlencoded({extended:false}));
 
 const budgetItems = require('./models/budget.js')
 let bankAccount = 0;
-for(item of budgetItems){
-    bankAccount += item.amount
+
+let addMoney = () =>{
+    for(item of budgetItems){
+        bankAccount += item.amount
+    }
 }
+addMoney()
 
 app.listen(port, () =>{
     console.log('listening on port:', port)
@@ -39,6 +43,7 @@ app.get('/new', (req,res) =>{
 
 app.post('/', (req,res) =>{
     budgetItems.push(req.body)
+    addMoney();
     res.redirect('/')
 })
 

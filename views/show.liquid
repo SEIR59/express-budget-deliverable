@@ -15,7 +15,7 @@
         <p>Name: {{item.name}}<p>
         <p>From: {{item.from}}<p>
         <p>Amount: {{item.amount}}<p>
-        <p>Tags: {{item.tags}}<p>
+        <p>Tags: {%for tag in item.tags%}{{tag}},{%endfor%}<p>
         <button onclick="location.href = '/'">Take me back man, as I do so well</button>
     </div>
 </body>

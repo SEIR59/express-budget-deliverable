@@ -19,7 +19,11 @@
                 <td><a href="/{{forloop.index0}}">{{item.name}}</a></td>
                 <td>{{item.from}}</td>
                 <td>{{item.amount}}</td>
-                <td>{{item.tags}}</td>
+                <td>
+                {%for tag in item.tags%}
+                {{tag}},
+                {% endfor%}
+                </td>
             </tr>
             {%endfor%}
         </table>
