@@ -42,7 +42,11 @@ app.get("/budget/:indexOfBudget", (req, res) => {
 })
 
 
-
+app.post('/budget', (req, res) => {
+  console.log(req.body)
+  Budget.push(req.body)
+  res.redirect('budget')
+})
 
 
 

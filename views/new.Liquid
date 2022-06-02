@@ -13,10 +13,10 @@
     <div class="container">
     <h1>Add New Budget</h1>
         <form action="/budget" method="POST">
-            Date: <input type="text" name="date" id="date">
-            Name: <input type="text" name="name" id="name">
-            From: <input type="text" name="from" id="from">
-            Amount: <input type="number" name="amount" id="amount">
+            Date: <input type="text" name="date" id="date" placeholder="Date">
+            Name: <input type="text" name="name" id="name" placeholder="Budget Name">
+            From: <input type="text" name="from" id="from" placeholder="Company Name">
+            Amount: <input type="number" name="amount" id="amount" placeholder="$$">
             {% comment %} tags:  {% endcomment %}
             <input type="submit" name="Add Budget">     
         </form>
