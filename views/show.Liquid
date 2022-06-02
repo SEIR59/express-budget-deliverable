@@ -17,23 +17,18 @@
 
         <a href="/">
             <button type="">BACK</button>
-        </a>
+        </a><br>
 
-        <table>
-            {% for budgetItem in allBudgetItems %}
-            <tr>
-                <td>
-                    {{ budgetItem.date }}
-                </td>
-                <td>
-                    <a href="/">{{ budgetItem.name }}</a>
-                </td>
-                <td>
-                    {{ budgetItem.amount }}
-                </td>
-            </tr>
-            {% endfor %}
-        </table>
+        date<br>
+        {{ budgetItem.date }}<br>
+        name<br>
+        {{ budgetItem.name }}<br>
+        from<br>
+        {{ budgetItem.from }}<br>
+        amount<br>
+        {{ budgetItem.amount }}<br>
+        tags<br>
+        {{ budgetItem.tags }}<br>
     </div>
 </body>
 
