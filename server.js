@@ -1,7 +1,16 @@
+// set up variables for server
 const expr = require("express")
 const app = require("liquid-express-views")(expr())
 const port = 3000
+// allows for use of req.body data
+app.use(expr.urlencoded({extended: false}))
+// sets public as the default file to search in for files (ex: .css/.js)
+app.use(expr.static("public"))
 
+
+/*====================
+        Routes
+====================*/
 app.get("/",(req,res) => {
     res.send("This is the - '/ get' - path")
 })
