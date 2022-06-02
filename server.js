@@ -1,6 +1,6 @@
 const express = require('express');
-const app = require("./node_modules/liquid-express-views")(express());
-const budget = require('./budget')
+const app = require("liquid-express-views")(express());
+const Budget = require('./Models/budget');
 
 const port = 3000;
 
@@ -11,14 +11,14 @@ app.use((req, res, next) => {
 
 app.use(express.urlencoded({extended:false}));
 
-app.listen(port, () => {
-    console.log('listening');
-});
-
-app.get('/budgets', function(req, res){
-    res.render('');
+app.get('/', (req, res) =>{
+    res.send('Hello');
 });      
 
+app.get('/budgets/', (req, res) =>{
+    res.render('index');
+});      
+/*
 app.get('/budgets/new', function(req, res){
     res.render('');
 });      
@@ -29,4 +29,8 @@ app.get('/budgets/:index', function(req, res){
 
 app.post('/budgets', function(req, res){
     
-});      
+});      */
+
+app.listen(port, () => {
+    console.log('listening');
+});
