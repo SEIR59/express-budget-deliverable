@@ -21,3 +21,16 @@ app.get("/", (request, response) => {
         Budget: Budget
     })
 })
+
+// rendering the expenditure details
+app.get("/:id", (request, response) => {
+    response.render('show', {
+        Budget: Budget,
+        number: request.params.id
+    })
+})
+
+// going back button
+app.post("/next", (request, response) => {
+    response.redirect("/")
+})
