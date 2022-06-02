@@ -4,19 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/normalize.css">
-<link rel="stylesheet" href="/skeleton.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
     <title>Document</title>
 
 </head>
 <body>
-    <table>
-        {% for budget in allbudgets %}
-       <tr>
-           {{}}
-       </tr> 
-    </table>
-    <div class="container"></div>
+     <div class="container"></div>
     <h1>Budgtr ALL</h1>
+    <table>
+        {% for budget in allbudget %}
+       <tr>
+        <td><a href="{{budget.name}}">{{budget.name}}</a></td>
+
+          <td> {{budget.date}} </td>
+           <td>{{budget.from}}</td>
+          <td> {{budget.amount}}</td>
+          <td> {{budget.tags}}</td>
+       </tr> 
+       {%endfor%}
+    </table>
+   
 </body>
 </html>

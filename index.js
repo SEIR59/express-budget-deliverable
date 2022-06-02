@@ -20,7 +20,8 @@ app.get('/' , (req, res) =>{
     res.send('hello world')
 })
 app.get('/budgets', (req, res) =>{
-    res.render('index')
+    res.render('index',
+    {allbudget:budget})
 })
 
 app.get('/budgets/:index', (req, res) =>{
