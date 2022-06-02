@@ -42,7 +42,9 @@
         tags
     </h5>
     <h6>
+       {% comment %} {% for item in tags %} {% endcomment %}
         {{budgetItem.tags}}, 
+    {% comment %} {% endfor %} {% endcomment %}
      </h6>
     </div>
 </body>

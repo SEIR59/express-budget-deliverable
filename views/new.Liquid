@@ -6,9 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/skeleton.css">
-    <title>Document</title>
+    <title>Form</title>
 </head>
 <body>
+
+    <div class="container">
+    <h1>Add New Budget</h1>
+        <form action="/budget" method="POST">
+            Date: <input type="text" name="date" id="date">
+            Name: <input type="text" name="name" id="name">
+            From: <input type="text" name="from" id="from">
+            Amount: <input type="number" name="amount" id="amount">
+            {% comment %} tags:  {% endcomment %}
+            <input type="submit" name="Add Budget">     
+        </form>
     
+    </div>
+
 </body>
 </html>
