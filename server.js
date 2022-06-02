@@ -18,7 +18,8 @@ app.use(express.static('public'))
 
 
 app.post('/budgets', (req, res) => {
-    res.redirect('/budget')
+    Budget.push(req.body)
+    res.redirect('/budgets')
 })
 
 app.get('/budgets', (req, res) => {
@@ -28,7 +29,7 @@ app.get('/budgets', (req, res) => {
 })
 
 app.get('/budgets/new', (req, res) => {
-    
+    res.render('new')
 })
 
 app.get('/budgets/:index', (req, res) => {
