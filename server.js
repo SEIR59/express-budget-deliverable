@@ -3,6 +3,7 @@ const express = require('express')
 const app = require('liquid-express-views')(express())
 const port = 3000
 const budget = require('./models/budget')
+let bankAccount = 0;
 
 // Middleware
 app.use((req, res, next) => {
@@ -10,15 +11,21 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use(express.urlencoded({extended:false}));
+app.use(express.urlencoded({ extended: false }));
 
 
 // Routes
 app.get('/budget', (req, res) => {
-    res.render('index', 
-    {
-        allBudgetItems : budget
-    })
+    bankAccount = 0;
+    for (let i = 0; i < budget.length; i++) {
+        bankAccount += parseInt(budget[i].amount)
+        console.log('account balance is now: ' + bankAccount)
+    }
+    res.render('index',
+        {
+            allBudgetItems: budget,
+            balance: bankAccount
+        })
 })
 
 app.post('/budget', (req, res) => {
@@ -31,10 +38,10 @@ app.get('/budget/new', (req, res) => {
 })
 
 app.get('/budget/:index', (req, res) => {
-    res.render('show', 
-    {
-        budgetItem : budget[req.params.index]
-    })
+    res.render('show',
+        {
+            budgetItem: budget[req.params.index]
+        })
 })
 
 
