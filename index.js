@@ -2,6 +2,14 @@ const express = require('express')
 const app = require('liquid-express-views')(express())
 const port = 3000;
 
+app.use((req, res, next) => {
+    console.log('I run for all routes');
+    next();
+});
+app.use(express.static('public'))
+//near the top, around other app.use() calls
+app.use(express.urlencoded({extended:false}));
+
 const budgetItems = require('./models/budget.js')
 
 app.listen(port, () =>{
