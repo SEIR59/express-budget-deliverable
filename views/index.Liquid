@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/normalize.css">
-    <link rel="stylesheet" href="/skeleton.css">
+    <!-- <link rel="stylesheet" href="/public/normalize.css">
+    <link rel="stylesheet" href="/public/skeleton.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
     <title>Index</title>
 </head>
 
@@ -14,6 +16,22 @@
     <div class="container">
 
         <h1>Budgtr ALL</h1>
+
+        <table>
+            {% for budgetItem in allBudgetItems %}
+            <tr>
+                <td>
+                    {{ budgetItem.date }}
+                </td>
+                <td>
+                    <a href="/">{{ budgetItem.name }}</a>
+                </td>
+                <td>
+                    {{ budgetItem.amount }}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
     </div>
 </body>
 
