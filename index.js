@@ -43,8 +43,10 @@ app.get('/new', (req,res) =>{
 
 app.post('/', (req,res) =>{
     budgetItems.push(req.body)
+    bankAccount = 0;
     addMoney();
     res.redirect('/')
+    
 })
 
 
