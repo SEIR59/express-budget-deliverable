@@ -11,6 +11,10 @@ app.use(express.static('public'))
 app.use(express.urlencoded({extended:false}));
 
 const budgetItems = require('./models/budget.js')
+let bankAccount = 0;
+for(item of budgetItems){
+    bankAccount += item.amount
+}
 
 app.listen(port, () =>{
     console.log('listening on port:', port)
@@ -21,7 +25,12 @@ app.listen(port, () =>{
 // })
 
 app.get('/', (req,res) =>{
-   res.render('index',{allBudgetItems: budgetItems})
+   res.render('index',
+   {
+       allBudgetItems: budgetItems,
+       money:bankAccount
+
+})
 })
 
 app.get('/new', (req,res) =>{
