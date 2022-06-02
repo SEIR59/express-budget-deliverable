@@ -11,10 +11,11 @@
 <body>
     <div class="container">
         <h1>Budgtr All</h1>
+        <h4>Bank Account: {{bankAccount}}</h4>
         <table>
             {% for data in BudgetList %}
             <tr>
-                <td>{{data.date}}</td><td><a href="/budgets/{{forloop.index0}}">{{data.name}}</a></td><td>{{data.amount}}</td>
+                <td>{{data.date | date: "%b %d"}}</td><td><a href="/budgets/{{forloop.index0}}">{{data.name}}</a></td><td>{{data.amount}}</td>
             </tr>
             {% endfor %}
         </table>

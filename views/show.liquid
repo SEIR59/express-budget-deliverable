@@ -16,7 +16,7 @@
         </form>
         <!-- display the rest of the data here -->
         <label>Date</label>
-        {{ budgetItem.date }}
+        {{ budgetItem.date | date: "%b %d" }}
         <label>Name</label>
         {{ budgetItem.name }}
         <label>From</label>
