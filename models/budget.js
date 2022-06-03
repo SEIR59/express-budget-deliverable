@@ -20,14 +20,14 @@ const budget = [
     name: "Retirement",
     from: "Country Bank",
     amount: -200,
-    tags: ["retirement", "investing in the future"]
+    tags: ["retirement, ", "investing in the future"]
   },
   {
     date: "April 1",
     name: "Savings",
     from: "Country Bank",
     amount: -100,
-    tags: ["savings", "rainy day fund"]
+    tags: ["savings, ", "rainy day fund"]
   },
   {
     date: "April 1",

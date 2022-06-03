@@ -1,27 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/public/normalize.css">
-    <link rel="stylesheet" href="/public/skeleton.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
 </head>
+
 <body>
-    
+
     <div class="container">
-        
+
         <h1>Budgtr ALL</h1>
         {% for showBud in myBudget %}
-        <li>
-           
-             The <a href="/index/{{
-                forloop.index0}}"> {{showBud.name | capitalize}} </a>
-           
-           
-        </li>
+
+
+        {{forloop.budget}}
+        <table>
+            <td> {{showBud.date}} </td>
+            
+            <td> <a href="">{{showBud.name}}</a></td>
+            
+            <td>{{showBud.from}}</td>
+            
+            <td>{{showBud.amount}}</td>
+            
+            <td>{{showBud.tags}}</td>
+        </table>
+
+
         {% endfor %}
     </div>
 </body>
+
 </html>
