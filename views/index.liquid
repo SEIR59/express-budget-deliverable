@@ -11,6 +11,13 @@
   <body>
     <div class="container">
       <h1>Budgtr All </h1>
+      {% assign bankAccount = 0 %}
+        {% for b in budgtr %}
+          {% assign bankAccount = bankAccount | plus: b.amount %}
+        {% endfor %}
+
+
+      <h3>BankAccount: {{bankAccount}}</h3>
       <table>
         {% for b in budgtr %}
         <tr>

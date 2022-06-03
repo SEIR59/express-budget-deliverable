@@ -25,7 +25,11 @@ app.get('/budgets/new',(req, res)=>{
 app.get('/budgets/:index',(req, res)=>{
     res.render("show",{budgtr:Budget[req.params.index]})
 })
-
+// post
+app.post('/budgets',(req, res)=>{
+    Budget.push(req.body);
+    res.redirect("/budgets")
+})
 
 // create
 
