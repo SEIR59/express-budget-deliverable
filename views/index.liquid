@@ -16,8 +16,11 @@
           {% assign bankAccount = bankAccount | plus: b.amount %}
         {% endfor %}
 
-
-      <h3>BankAccount: {{bankAccount}}</h3>
+        
+        {%if bankAccount<0 %} {% assign color = "red" %}
+          {% else %} {% assign color = "green" %}
+        {% endif %}
+      <h3 style="background-color:{{color}}">BankAccount: {{bankAccount}}</h3>
       <table>
         {% for b in budgtr %}
         <tr>
