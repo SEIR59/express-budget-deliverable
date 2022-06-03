@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/normalize.css">
-    <link rel="stylesheet" href="/skeleton.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/skeleton.css">
   </head>
   <body>
     <div class="container">
@@ -15,7 +15,7 @@
         {% for b in budgtr %}
         <tr>
           <td> {{b.date}}</td>
-          <td> <a href="/budgtr/{{ forloop.index0 }}">{{ b.name }}</a></td>
+          <td> <a href="/budgets/{{ forloop.index0 }}">{{ b.name }}</a></td>
           <td> {{b.amount}}</td>
         </tr>
       {% endfor%}
