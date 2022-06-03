@@ -20,22 +20,23 @@
     <div class="container">
       <h1>Budgtr ALL</h1>
       <a href="/budgets/new"><button>New Item</button></a>
-    </div>
-    <table>
-      {% for budgets in allBudgets %}
-      <tr>
-        <td>
-          {{ budgets.date }}
-        </td>
-        <td>
-          <a href="/budgets/{{ forloop.index0 }}">{{ budgets.name }}</a>
-        </td>
-        <td id="amount">
-          {{ budgets.amount }}
-        </td>
-      </tr>
 
-      {% endfor %}
-    </table>
+      <table>
+        {% for budgets in allBudgets %}
+        <tr>
+          <td>
+            {{ budgets.date }}
+          </td>
+          <td>
+            <a href="/budgets/{{ forloop.index0 }}">{{ budgets.name }}</a>
+          </td>
+          <td id="amount">
+            {{ budgets.amount }}
+          </td>
+        </tr>
+
+        {% endfor %}
+      </table>
+    </div>
   </body>
 </html>
