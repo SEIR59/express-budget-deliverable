@@ -9,3 +9,9 @@ app.listen(port, () => {
 app.get('/', (req, res) => {
     res.send(`Hello Tran!`)
 })
+
+app.get('/budgets', (req, res) => {
+    res.render(
+        'index'
+    )
+})
