@@ -9,8 +9,19 @@
     <title>Document</title>
 </head>
 <body>
+
+
+{% comment %} //green - foorloop if/else / could link to css file  {% endcomment %}
+
+
+
+{% comment %} //red {% endcomment %}
+
+
+
     <div class="container">
         <h1>Budget All</h1>
+        <h2>Bank Account : $ {{bankAccount}}</h2>
         <table>
             {%for budget in allBudgetItems %}
                 {% comment %} //row {% endcomment %}

@@ -11,8 +11,7 @@
 <body>
     <div class="container">
         <h1>{{budgetItem.name}}</h1>
-        <button>
-        <a href="/budget">BACK</a>
+        <button onclick="location.href='/budget'">BACK
         </button>
     <h5>
         Date
@@ -43,7 +42,9 @@
     </h5>
     <h6>
        {% comment %} {% for item in tags %} {% endcomment %}
-        {{budgetItem.tags}}, 
+       {% for item in budgetItem.tags%}
+        {{item}},
+        {%endfor%} 
     {% comment %} {% endfor %} {% endcomment %}
      </h6>
     </div>
