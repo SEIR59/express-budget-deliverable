@@ -6,36 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css ">
+    <link rel="stylesheet" href="styles.css">
     <title>Budget</title>
 </head>
 <body>
-    <h1>Budgtr</h1>
-    <button onclick="window.location.href='/budgets/new'">New Item</button>
-    <table>
-        {% for budget in allBudget %} 
-            {% assign bankAccount = budget.amount %}
-                {% if bankAccount < 0 %}
-                    <tr style="background-color: red;">
-                        <td>{{ budget.date }}</td>
-                        <td> <a href="/budgets/{{forloop.index0}}">{{ budget.name }}</a></td>
-                        <td>{{ budget.amount }}</td>
-                    </tr>
+    <div class = "container">
+        <h1>Budgtr</h1>
+        <button onclick="window.location.href='/budgets/new'">New Item</button>
+        <table>
+            {% for budget in allBudget %} 
+                {% assign bankAccount = budget.amount %}
+                    {% if bankAccount < 0 %}
+                        <tr style="background-color: #b22222;">
+                            <td>{{ budget.date }}</td>
+                            <td> <a href="/budgets/{{forloop.index0}}">{{ budget.name }}</a></td>
+                            <td>{{ budget.amount }}</td>
+                        </tr>
 
-                 {% elsif bankAccount > 1000 %}
-                    <tr style="background-color: green;">
-                        <td>{{ budget.date }}</td>
-                        <td> <a href="/budgets/{{forloop.index0}}">{{ budget.name }}</a></td>
-                        <td>{{ budget.amount }}</td>
-                    </tr>
+                    {% elsif bankAccount > 1000 %}
+                        <tr style="background-color: green;">
+                            <td>{{ budget.date }}</td>
+                            <td> <a href="/budgets/{{forloop.index0}}">{{ budget.name }}</a></td>
+                            <td>{{ budget.amount }}</td>
+                        </tr>
 
-                {% else %}
-                    <tr>
-                        <td>{{ budget.date }}</td>
-                        <td> <a href="/budgets/{{forloop.index0}}">{{ budget.name }}</a></td>
-                        <td>{{ budget.amount }}</td>
-                    </tr>
-                {% endif %}
-        {% endfor %}
-    </table>
+                    {% else %}
+                        <tr>
+                            <td>{{ budget.date }}</td>
+                            <td> <a href="/budgets/{{forloop.index0}}">{{ budget.name }}</a></td>
+                            <td>{{ budget.amount }}</td>
+                        </tr>
+                    {% endif %}
+            {% endfor %}
+        </table>
+    </div>
 </body>
 </html>
