@@ -15,12 +15,20 @@ app.get('/budget', (req, res) => {
     })
 })
 
+app.get('/budget/new', (req,res) => {
+    res.render('new')
+})
+
+
 app.get('/budget/:index', (req, res) => {
     res.render('show', {
         Budget: budget[req.params.index]
     })
 })
 
+app.post('/budget', (req,res) => {
+    res.send(req.body)
+})
 
 
 
