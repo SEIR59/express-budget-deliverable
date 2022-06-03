@@ -3,10 +3,10 @@
 const budget = [
   {
     date: "April 1",
-    name: "Income",
+    name: "Income ",
     from: "Old Glory Insurance",
     amount: 1000,
-    tags: ["income", "yay"]
+    tags: ["income ", "yay"]
   },
   {
     date: "April 1",
