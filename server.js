@@ -6,8 +6,10 @@ app.listen(3000, () => {
     console.log("Working")
 })
 
+app.use(express.urlencoded({extended: false }))
+app.use(express.static('public'))
+
 app.get('/', (req, res) => {
-    console.log("working")
     res.send("this one works")
 })
 
