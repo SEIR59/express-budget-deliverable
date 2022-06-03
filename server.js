@@ -31,6 +31,10 @@ app.get('/budget/:indexOfBudgetArray', (req, res) => {
     })
  })
 
+ app.post("/budget,", (req, res) =>{
+    budget.push(req.body)
+    res.redirect('/budget')
+})
 
 app.listen(3000, () => {
     console.log("listening on port 3000!")
