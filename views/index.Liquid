@@ -15,17 +15,10 @@
     <link rel="stylesheet" href="/css/app.css" />
     <title>Index</title>
   </head>
-  <body>
+  <body id={% if bankAccount < 0 %} "red" {% elsif bankAccount > 1000 %} "green" {% else %} "" {% endif %}>
     <div class="container">
       <hr />
-
-      {% if bankAccount < 0 %}
-      <h1 id="red">Bank Account Balance: {{ bankAccount }}</h1>
-      {% elsif bankAccount > 1000 %}
-      <h1 id="green">Bank Account Balance: {{ bankAccount }}</h1>
-      {% else %}
       <h1>Bank Account Balance: {{ bankAccount }}</h1>
-      {% endif %}
       <hr />
       <h2>Budgtr ALL</h2>
       <table class="u-full-width">

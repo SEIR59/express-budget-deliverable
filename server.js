@@ -5,6 +5,8 @@ const methodOverride = require('method-override');
 const Budget = require('./models/budget');
 let bankAccount = 0;
 
+// window.localStorage.setItem('budgetList', Budget)
+
 //! Middlewares
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false }));
