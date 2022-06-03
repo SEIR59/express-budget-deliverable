@@ -15,9 +15,8 @@ app.use(express.static('public'))
 app.use(express.urlencoded({extended: false}))
 
 app.post('/budgets', (req, res) => {
-    res.send(
-        'I am post'
-    )
+    budget.push(req.body)
+    res.redirect('/budgets')
 })
 
 app.get('/', (req, res) => {
