@@ -1,4 +1,6 @@
-module.exports = [
+module.exports = budget
+
+const budget = [
   {
     date: "April 1",
     name: "Income",
