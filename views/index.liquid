@@ -7,8 +7,36 @@
     <title>Document</title>
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/skeleton.css">
+    <style>
+        #blue{
+            background-color: blue;
+        }
+        #red{
+            background-color: red;
+        }
+    </style>
 </head>
 <body>
+    
+    <!-- {%assign Rsign = "Bank Account" %}
+    {%assign Bsign = "Bank Account" %} -->
+
+    {%assign a = 0%}
+    {%for record in allRecords%}
+    {% assign a = a | plus:record.amount %}
+   
+    {% endfor %}
+
+    {%if a > 1000%}
+    <h1 id = 'blue'>{{a}}</h1>
+    {%elsif a <= 0%}
+    <h1 id = 'red'>{{a}}</h1>
+    {%else%}
+    {{a}}
+    {%endif%}
+
+
+    
 <h1>Budgtr ALL</h1>
 <div class = 'container'> 
 
