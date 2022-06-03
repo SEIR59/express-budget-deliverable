@@ -73,5 +73,5 @@ const budget = [
   }
 ]
 
-console.log(budget[1])
+
 module.exports = budget
