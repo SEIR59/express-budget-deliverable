@@ -3,6 +3,11 @@ const app = require("liquid-express-views")(express());
 const port = 3000;
 const Budget = require("./models/budget.js")
 
+app.use((req, res, next) => {
+    console.log('run routes');
+    next();
+});
+
 //near the top, around other app.use() calls
 app.use(express.urlencoded({extended:false}));
 
@@ -12,12 +17,15 @@ app.use(express.static('public')); //tells express to try to match requests with
 app.get('/budgets',(req, res)=>{
     res.render("index",{budgtr: Budget})
 })
+// new
+app.get('/budgets/new',(req, res)=>{
+    res.render("new")
+})
 // show
 app.get('/budgets/:index',(req, res)=>{
     res.render("show",{budgtr:Budget[req.params.index]})
 })
 
-// new
 
 // create
 
