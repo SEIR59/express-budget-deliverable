@@ -63,6 +63,7 @@ app.get('/:indexOfBudgetItems', (req,res) =>{
 
 app.delete('/:indexOfBudgetItems', (req,res) =>{
     budgetItems.splice(req.params.indexOfBudgetItems, 1)
+    bankAccount = 0;
     addMoney()
     res.redirect("/")
 })
