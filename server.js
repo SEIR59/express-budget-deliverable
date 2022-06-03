@@ -9,6 +9,8 @@ app.use((req, res, next) =>{
     next()
 })
 
+app.use(express.urlencoded({extended: false}))
+
 app.use(express.static('public'))
 
 app.get('/budget', (req ,res) => {
@@ -20,6 +22,17 @@ app.get('/budget', (req ,res) => {
     )
 })
 
+app.post('/budget', (req, res) => {
+    console.log(req.body)
+    Budget.push(req.body)
+    res.redirect('/budget')
+})
+
+app.get('/budget/new', (req, res) => {
+    res.render('new')
+})
+
+
 app.get('/budget/:indexOfBudgetArray', (req, res) =>{
     res.render(
         'show',
@@ -28,6 +41,7 @@ app.get('/budget/:indexOfBudgetArray', (req, res) =>{
         }
     )
 })
+
 
 app.listen(4000, () => {
     console.log('listen to port 4000')
