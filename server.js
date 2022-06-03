@@ -25,8 +25,9 @@ app.get('/budgets/:index', (req, res) => {
 
 
 app.post('/budgets', (req, res) => {
-    console.log(req.body)
-    res.redirect('/budgets')
+    console.log(req.body);
+    budget.push(req.body);
+    res.redirect('/budgets');
 });
 
 
