@@ -4,9 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
     <title>Document</title>
 </head>
 <body>
-    <h1>new route</h1>
+    <div class="container">
+        <h1>Create New Budget</h1>
+        <form action="/budgets" method="post">
+            <label for="date">Date</label>
+            <input type="date" name="date" id="">
+
+            <label for="name">Name</label>
+            <input type="text" name="name" id="">
+
+            <label for="amount">Amount</label>
+            <input type="number" name="amount" id="">
+
+            <label for="from">From</label>
+            <input type="text" name="from" id="">
+
+
+            <input type="submit" value="Create New Item" >
+        </form>
+        
+    </div>
+    
 </body>
 </html>
