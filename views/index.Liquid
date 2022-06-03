@@ -8,8 +8,9 @@
 <link rel="stylesheet" href="/css/skeleton.css">
     <title>Document</title>
 </head>
-<body>
-    <div class="container">
+<body >
+    {% if sum < 0 %}
+    <div class="container" style="background-color: red;">
         <h1>Budgtr</h1>
         <table>
             {% for budget in budgetAll %}
@@ -17,16 +18,53 @@
                 <td>{{budget.date}}</td>
                 <td><a href="/budgets/{{forloop.index0}}">{{budget.name}}</a></td>
                 <td>{{budget.amount}}</td>
-
             </tr>
-            
             {% endfor %}
-            
         </table>
         <form action="/budgets/new">
             <button type="submit">Create new Budget</button>
         </form>
     </div>
+
+    {% elsif sum > 1000 %}
+    <div class="container" style="background-color: blue;">
+        <h1>Budgtr</h1>
+        <table>
+            {% for budget in budgetAll %}
+            <tr>
+                <td>{{budget.date}}</td>
+                <td><a href="/budgets/{{forloop.index0}}">{{budget.name}}</a></td>
+                <td>{{budget.amount}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <form action="/budgets/new">
+            <button type="submit">Create new Budget</button>
+        </form>
+    </div>
+
+            {% else %}
+            <div class="container" >
+                <h1>Budgtr</h1>     
+                <table>
+                    {% for budget in budgetAll %}
+                    <tr>
+                        <td>{{budget.date}}</td>
+                        <td><a href="/budgets/{{forloop.index0}}">{{budget.name}}</a></td>
+                        <td>{{budget.amount}}</td>
+        
+                    </tr>
+                    {% endfor %}
+                </table>
+        
+                <form action="/budgets/new">
+                    <button type="submit">Create new Budget</button>
+                </form>
+            </div>
+        
+    {% endif %}
+    
     
 </body>
 </html>

@@ -5,10 +5,21 @@ app.use(express.static('public'));
 const budget = require('./models/budget.js')
 app.use(express.urlencoded({ extended: false}));
 
+let bankAcoount = 0;
+
+let sum = function() {
+
+    budget.forEach((item) => {
+        bankAcoount += parseInt(item.amount)
+    })
+}
 
 app.get('/budgets', (req, res) => {
+    sum();
+    console.log(bankAcoount)
 res.render('index', {
-    budgetAll: budget
+    budgetAll: budget,
+    sum: bankAcoount
 })
 });
 
