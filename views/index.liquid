@@ -6,11 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/normalize.css" />
     <link rel="stylesheet" href="/css/skeleton.css" />
+    <link rel="stylesheet" href="/css/style.css " />
     <title>Document</title>
   </head>
   <body>
-    <div class="container"></div>
+    {% if money >= 1000 %}
+    <div class="green-container container">
+      <h1>Budgtr ALL</h1>
+      <h3>Bank Account: {{ money }}</h3>
+      <table>
+        {% for item in allbudget %}
+        <tr>
+          <td>
+            <a href="/budgets/{{ forloop.index0 }}">{{ item.name }}</a>
+          </td>
+
+          <td>{{ item.date }}</td>
+          <td>{{ item.from }}</td>
+          <td>{{ item.amount }}</td>
+          <td>{{ item.tags }}</td>
+        </tr>
+        {%endfor%}
+      </table>
+      <button onclick="location.href='/budgets/new'">
+        Create a New Budget
+      </button>
+    </div>
+    {%else%}
+    <div class="red-container container">
     <h1>Budgtr ALL</h1>
+    <h3>Bank Account: {{ money }}</h3>
     <table>
       {% for item in allbudget %}
       <tr>
@@ -18,13 +43,15 @@
           <a href="/budgets/{{ forloop.index0 }}">{{ item.name }}</a>
         </td>
 
-        <td> {{ item.date }} </td>
-        <td> {{ item.from }} </td>
-        <td> {{ item.amount }} </td>
-        <td> {{ item.tags }} </td>
+        <td>{{ item.date }}</td>
+        <td>{{ item.from }}</td>
+        <td>{{ item.amount }}</td>
+        <td>{{ item.tags }}</td>
       </tr>
       {%endfor%}
     </table>
     <button onclick="location.href='/budgets/new'">Create a New Budget</button>
+</div>
+    {%endif%}
   </body>
 </html>

@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/normalize.css">
-<link rel="stylesheet" href="/css/skeleton.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/skeleton.css" />
+    <link rel="stylesheet" href="/css/style.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container"></div>
-    <h1> {{ budgets.name }} </h1>
+    <h1>{{ budgets.name }}</h1>
     <button onclick="location.href='/budgets'">BACK</button>
-
-</body>
+    <h4>Date</h4>
+    <h6>{{ budgets.date }}</h6>
+    <h4>From</h4>
+    <h6>{{ budgets.from }}</h6>
+    <h4>Amount</h4>
+    <h6>{{ budgets.amount }}</h6>
+  </body>
 </html>
