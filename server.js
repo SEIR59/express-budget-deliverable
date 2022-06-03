@@ -22,7 +22,9 @@ app.get('/budget', (req, res) => {
     })
 
 })
-
+app.get('/budget/new', (req, res) => {
+    res.render('new')
+})
 app.get('/budget/:indexOfBudgetArray', (req, res) => {
     res.render("show", {
         budgetItem: budget[req.params.indexOfBudgetArray] 
