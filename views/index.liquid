@@ -10,6 +10,18 @@
 </head>
 <body>
     
-    <div class="container"><h1>Budgtr ALL</h1></div>
+    <div class="container">
+        
+        <h1>Budgtr ALL</h1>
+        {% for showBud in myBudget %}
+        <li>
+           
+             The <a href="/index/{{
+                forloop.index0}}"> {{showBud.name | capitalize}} </a>
+           
+           
+        </li>
+        {% endfor %}
+    </div>
 </body>
 </html>

@@ -1,4 +1,4 @@
-module.exports = budget
+
 
 const budget = [
   {
@@ -72,3 +72,6 @@ const budget = [
     tags: ["pets"]
   }
 ]
+
+console.log(budget[1])
+module.exports = budget
