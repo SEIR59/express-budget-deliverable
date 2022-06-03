@@ -25,12 +25,14 @@ app.get("/budgets", (req, res) => {
 
 // Post
 app.post("/budgets", (req, res) => {
-  res.send("Hi");
+  console.log(req.body);
+  budget.push(req.body);
+  console.log(budget);
 });
 
 // New
 app.get("/budgets/new", (req, res) => {
-  res.send("Hi");
+  res.render("new");
 });
 
 // Index
