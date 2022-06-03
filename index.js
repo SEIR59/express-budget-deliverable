@@ -2,6 +2,8 @@ const express = require('express')
 const app = require('liquid-express-views')(express())
 const port = 3000;
 
+const methodOverRide = require('method-override')
+
 
 app.use((req, res, next) => {
     console.log('I run for all routes');
@@ -10,6 +12,7 @@ app.use((req, res, next) => {
 app.use(express.static('public'))
 //near the top, around other app.use() calls
 app.use(express.urlencoded({extended:false}));
+app.use(methodOverRide('_method'))
 
 const budgetItems = require('./models/budget.js')
 let bankAccount = 0;
@@ -19,7 +22,6 @@ let addMoney = () =>{
         itemnum = Number(item.amount)
         bankAccount += itemnum
     }
-
 }
 addMoney()
 
@@ -59,3 +61,8 @@ app.get('/:indexOfBudgetItems', (req,res) =>{
     })
 })
 
+app.delete('/:indexOfBudgetItems', (req,res) =>{
+    budgetItems.splice(req.params.indexOfBudgetItems, 1)
+    addMoney()
+    res.redirect("/")
+})
