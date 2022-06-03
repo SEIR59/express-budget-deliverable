@@ -11,6 +11,7 @@
   <body>
     <div class="container">
       <h1>Budget All</h1>
+      <a href="/budgets/new"><button>New Item</button></a>
       {% for budget in allBudget %}
       <!-- assign here is to do the math -->
       {% assign bankAccount = bankAccount | plus: budget.amount%}
@@ -20,7 +21,7 @@
       {% elsif bankAccount > 1000 %}
       <h4 style="background-color: greenyellow;">Bank account ${{bankAccount}}</h4>
       {% else %}
-      <h4">Bank account ${{bankAccount}}</h4>
+      <h4>Bank account ${{bankAccount}}</h4>
       {% endif %}
       
       <table>
