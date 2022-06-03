@@ -15,7 +15,9 @@
         <h1>Budget All</h1>
         
         <table>
-            <a href="/budgets/new">New</a>
+            <form action="/budgets/new">
+            <button type="submit">New</button>
+        </form>
             {% for budget in allBudgets %}
             <tr>
                 <td>
