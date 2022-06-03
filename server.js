@@ -5,7 +5,9 @@ const app = require('liquid-express-views')(express())
 const Budget = require('./models/budget.js')
 const budget = require('./models/budget.js')
 let bankAccount = 0
-
+const budgeting = Budget.forEach(i => {
+    return bankAccount += Number(i.amount)
+})
 
 
 
@@ -14,25 +16,23 @@ app.use(express.urlencoded({extended: false}))
 app.use(express.static('public'))
 
 app.get('/budget', (req ,res) => {
+    budgeting
     res.render(
         'index',
         {
-            allBudget: budget
+            allBudget: budget, bankAccount: bankAccount 
         },
-        bankAccount -= bankAccount
     )
 })
 
 app.post('/budget', (req, res) => {
     console.log(req.body)
-    Budget.push(req.body)
-    budget.forEach(i => {
-        return Number(bankAccount += Number(i.amount))
-    })
+    budget.push(req.body)
+    
+    budgeting
     
     console.log(bankAccount)
     res.redirect('/budget')
-    bankAccount = null
 })
 
 app.get('/budget/new', (req, res) => {
