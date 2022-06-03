@@ -12,10 +12,17 @@ app.get('/', (req, res) => {
     res.send('Hello')
 })
 
-app.get('/budgets', (req, res) => {
+app.get('/budgets/', (req, res) => {
     res.render('index.liquid', {
         allBudget: budgets
     })
+})
+
+app.get('/budgets/:index', (req, res) => {
+    // res.render('show.liquid', {
+    //     budget: budgets[req.params.index]
+    // })
+    //res.send(budgets[req.params.index])
 })
 
 
