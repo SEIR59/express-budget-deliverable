@@ -3,6 +3,7 @@ const app = require('liquid-express-views')(express())
 const port = 3000
 
 let budget = require('./models/budget.js')
+let bAccount = 0
 
 app.listen(port, () => {
     console.log(`port 3000 listens`)
@@ -29,7 +30,8 @@ app.get('/budgets', (req, res) => {
     res.render(
         'index',
         {
-            allBudget: budget
+            allBudget: budget,
+            bankAccount: bAccount
         }
     )
 })
