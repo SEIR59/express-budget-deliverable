@@ -45,7 +45,10 @@ app.get('/budgets/new', (req, res) => {
 // linked to show.liquid
 app.get('/budgets/:index', (req, res) => {
     res.render(
-        'show'
+        'show',
+        {
+            bName: budget[req.params.index]
+        }
     )
 })
 

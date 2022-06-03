@@ -9,6 +9,26 @@
     <title>Show</title>
 </head>
 <body>
-    
+    <div class="container">
+        <h1>{{bName.name}}</h1>
+        <h4>date</h4>
+        <p>{{bName.date}}</p>
+        <h4>from</h4>
+        <p>{{bName.from}}</p>
+        <h4>amount</h4>
+        <p>{{bName.amount}}</p>
+        <h4>tags</h4>
+        
+        <p>
+            {% for tag in bName.tags %}
+            {{tag}} 
+            <br>
+            {% endfor %}
+        </p>
+        
+        <form action="/budgets">
+            <button>Back</button>
+        </form>
+    </div>
 </body>
 </html>
