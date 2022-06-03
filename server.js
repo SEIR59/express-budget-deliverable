@@ -13,20 +13,12 @@ app.use((req, res, next) => {
 
 app.use(express.urlencoded({ extended: false }));
 
-
 // Routes
 app.get('/budget', (req, res) => {
-    bankAccount = 
-    {
-        amount: 0,
-        color: 'black'
-    }
+    bankAccount = 0;
     for (let i = 0; i < budget.length; i++) {
-        bankAccount.amount += parseInt(budget[i].amount)
-        console.log('account balance is now: ' + bankAccount.amount)
-    }
-    if (bankAccount.amount < 0) {
-        bankAccount.color = 'red'
+        bankAccount += parseInt(budget[i].amount)
+        console.log('account balance is now: ' + bankAccount)
     }
     res.render('index',
         {
@@ -51,11 +43,7 @@ app.get('/budget/:index', (req, res) => {
         })
 })
 
-
-
 // Listen
 app.listen(port, () => {
     console.log('listening on port: ' + port)
 })
-
-// express.static()

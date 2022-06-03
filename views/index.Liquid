@@ -17,16 +17,16 @@
 
         <h1>Budgtr ALL</h1>
 
-        {% if balance.amount < 0 %}
-        <h3 style="background-color: red;">{{ balance.amount }}</h3>
+        {% if balance < 0 %}
+        <h3 style="background-color: red;">{{ balance }}</h3>
         {% endif %}
 
-        {% if balance.amount > 1000 %}
-        <h3 style="background-color: green;">{{ balance.amount }}</h3>
+        {% if balance > 1000 %}
+        <h3 style="background-color: green;">{{ balance }}</h3>
         {% endif %}
 
-        {% if balance.amount > 0 and balance.amount < 1000 %}
-        <h3 style="background-color: white;">{{ balance.amount }}</h3>
+        {% if balance > 0 and balance < 1000 %}
+        <h3 style="background-color: white;">{{ balance }}</h3>
         {% endif %}
 
         <table>
