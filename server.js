@@ -45,6 +45,12 @@ app.get("/budgets/:index", (req, res) => {
 // bankAccount
 // let bankAccount = document.getElementById("amount");
 
-// if (bankAccount.innerHTML >= 1000) {
-//   bankAccount.style.backgroundColor = "green";
+// function checkAmount() {
+//   if (bankAccount.textContent >= 1000) {
+//     bankAccount.style.backgroundColor = "green";
+//   } else if (bankAccount.textContent <= 0) {
+//     bankAccount.style.backgroundColor = "red";
+//   }
 // }
+
+// checkAmount();
