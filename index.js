@@ -26,5 +26,6 @@ app.get('/budgets', (req, res) =>{
 
 app.get('/budgets/:index', (req, res) =>{
     res.render ('show',
-    {budget: budget[req.params.id]})
+    {budgets: budget[req.params.index]})
+    console.log(req.body)
 })
