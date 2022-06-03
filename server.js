@@ -19,9 +19,9 @@ app.get('/budgets/', (req, res) => {
 })
 
 app.get('/budgets/:index', (req, res) => {
-    // res.render('show.liquid', {
-    //     budget: budgets[req.params.index]
-    // })
+    res.render('show.liquid', {
+        budget: budgets[req.params.index]
+    })
     //res.send(budgets[req.params.index])
 })
 
