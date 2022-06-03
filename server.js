@@ -16,10 +16,11 @@ app.listen(3000, ()=>{
 })
 
 
-
 app.get("/budgets", (req,res)=>{
+    totalBudget(bankAccount)
     res.render("index", {
-        budget:budget
+        budget:budget,
+        bankAccount: bankAccount
     })
 })
 
@@ -35,9 +36,6 @@ app.get("/budget/:index", (req,res)=>{
 })
 
 
-
-
-
 app.post("/budgets", (req,res)=>{
     // res.send(req.body)
 
@@ -45,4 +43,12 @@ app.post("/budgets", (req,res)=>{
     res.redirect('/budgets')
 })
 
+let bankAccount=0;
 
+const totalBudget = (total) => {
+  bankAccount = 0
+  for (let i = 0; i < budget.length; i++){
+      bankAccount += parseInt(budget[i].amount)
+  }
+  
+}
