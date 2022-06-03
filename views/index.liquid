@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" type="text/css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css" type="text/css" rel="stylesheet">
+  <link rel="stylesheet" href="/public/css/style.css">
+  <title>Document</title>
+</head>
+<body>
+ <!-- <div class="container"> -->
+   {%if money >= 1000 %}
+   <div class="green-container container"> </div>
+  {% else %}
+  <div class="red-container container">
+    {%endif%}
+
+   <h1>Budgtr ALL</h1>
+   <h4>Bank Account: {{bankAccount}} </h4>
+   
+   <table>
+     {% for budget in allBudgets  %}    
+     <tr>
+       <td>{{ budget.date }}</td>
+       <td><a href="/budgets/{{ forloop.index0 }}" >{{ budget.name }}</a></td>
+       <td> {{ budget.amount }} </td>
+      </tr>
+      {% endfor %}
+    </table>
+    <button><a href="/budgets/new">New Item</a></button>
+  </div>
+</body>
+</html>
+
