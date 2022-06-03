@@ -23,7 +23,11 @@ app.get('/budget', (req, res) => {
 
 })
 
-
+app.get('/budget/:indexOfBudgetArray', (req, res) => {
+    res.render("show", {
+        budgetItem: budget[req.params.indexOfBudgetArray] 
+    })
+ })
 
 
 app.listen(3000, () => {
