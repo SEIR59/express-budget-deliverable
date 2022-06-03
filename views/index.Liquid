@@ -11,13 +11,20 @@
 </head>
 
 <body>
-    <div class="container">
+    
+    <div class="container"  id= 
+    {% if bankAccount < 0 %} "red-background" 
+    {% elsif bankAccount > 1000 %} 'green-background' 
+    {% else %} null 
+    {% endif %} %}>
+        
         <h1>HELLO adult WORLD</h1>
+        <h3>Current Balance: {{bankAccount}}</h3>
         <table>
             <tr>
                 <th>Date</th>
                 <th>Name</th>
-                <th>Expense</th>
+                <th>Amount</th>
             </tr>
             {% for expense in budget %}
             <tr>
@@ -30,7 +37,6 @@
             {% endfor %}
         </table>
         <button><a href="budgets/new">Add New Expense</a></button>
-
     </div>
 </body>
 

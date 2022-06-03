@@ -416,3 +416,12 @@ there.
 
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {}
+
+
+/* ID'S */
+#red-background {
+  background-color: red;
+}
+#green-background {
+  background-color: green;
+}
