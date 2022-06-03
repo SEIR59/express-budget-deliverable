@@ -19,11 +19,11 @@ const Budget = require('./models/budget.js')
 let bankAccount = 0
 
 let addMoney = () => {
-  for(item of Budget)
+  for(item of Budget){
   //have to turn numbers into actual number
   itemNum = Number(item.amount)
-   bankAccount+= itemNum
-}
+   bankAccount= bankAccount + itemNum
+}}
 addMoney()
 //-------------------------------------
 
@@ -40,7 +40,8 @@ app.get("/budget", (req, res) => {
     "index", //index.Liquid 
     {
       //controller
-      allBudgetItems: Budget
+      allBudgetItems: Budget,
+      money:bankAccount
     })
 })
 
@@ -60,7 +61,7 @@ app.post('/budget', (req, res) => {
   Budget.push(req.body)
   bankAccount = 0
   addMoney()
-  console.log(bankAccount)
+  // console.log(bankAccount)
   res.redirect('budget')
 })
 

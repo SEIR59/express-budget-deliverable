@@ -6,22 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/skeleton.css">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Document</title>
 </head>
 <body>
 
 
-{% comment %} //green - foorloop if/else / could link to css file  {% endcomment %}
-
-
-
-{% comment %} //red {% endcomment %}
-
-
-
-    <div class="container">
+{% if money >= 1000 %}
+    <div class="green-container container">
         <h1>Budget All</h1>
-        <h2>Bank Account : $ {{bankAccount}}</h2>
+        <h2>Bank Account : $ {{money}}</h2>
         <table>
             {%for budget in allBudgetItems %}
                 {% comment %} //row {% endcomment %}
@@ -45,5 +39,35 @@
             <a href="/budget/new">Create a New Budget</a>
         </button>
     </div>
+{%else%}
+
+    <div class="red-container container">
+        <h1>Budget All</h1>
+        <h2>Bank Account : $ {{money}}</h2>
+        <table>
+            {%for budget in allBudgetItems %}
+                {% comment %} //row {% endcomment %}
+                <tr>
+                    {% comment %} //data cell     {% endcomment %}
+                    <td>
+                        {{budget.date}}
+                    </td>
+                 
+                    <td>
+                        <a href="/budget/{{ forloop.index0}}">{{ budget.name }}</a> 
+                    </td>
+                
+                    <td>
+                        {{budget.amount}}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+        <button>
+            <a href="/budget/new">Create a New Budget</a>
+        </button>
+    </div>
+{%endif%}
+
 </body>
 </html>
