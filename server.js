@@ -1,8 +1,9 @@
 const express = require('express')
 const app = require("liquid-express-views")(express())
-const budget = require('./models/budget.js')
+const budgets = require('./models/budget.js')
 
 app.use(express.urlencoded({extended:false}))
+app.use(express.json())
 app.use(express.static('public'))
 
 const port = 3000
@@ -12,7 +13,9 @@ app.get('/', (req, res) => {
 })
 
 app.get('/budgets', (req, res) => {
-    res.send('Budgets')
+    res.render('index.liquid', {
+        allBudget: budgets
+    })
 })
 
 
