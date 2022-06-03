@@ -18,12 +18,13 @@
           <a href="/budgets/{{ forloop.index0 }}">{{ item.name }}</a>
         </td>
 
-        <td>{{ item.date }}</td>
-        <td>{{ item.from }}</td>
-        <td>{{ item.amount }}</td>
-        <td>{{ item.tags }}</td>
+        <td> {{ item.date }} </td>
+        <td> {{ item.from }} </td>
+        <td> {{ item.amount }} </td>
+        <td> {{ item.tags }} </td>
       </tr>
       {%endfor%}
     </table>
+    <button onclick="location.href='/budgets/new'">Create a New Budget</button>
   </body>
 </html>
