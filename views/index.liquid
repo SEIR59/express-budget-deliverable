@@ -9,6 +9,19 @@
     <link rel="stylesheet" href="/skeleton.css">
   </head>
   <body>
+    <div class="container">
+      <h1>Budgtr All </h1>
+      <table>
+        {% for b in budgtr %}
+        <tr>
+          <td> {{b.date}}</td>
+          <td> <a href="/budgtr/{{ forloop.index0 }}">{{ b.name }}</a></td>
+          <td> {{b.amount}}</td>
+        </tr>
+      {% endfor%}
+      </table>
+
+    </div>
 
   </body>
 </html>
