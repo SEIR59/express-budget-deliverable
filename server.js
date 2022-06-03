@@ -1,4 +1,5 @@
 const express = require("express");
+const { traceDeprecation } = require("process");
 const app = require("liquid-express-views")(express());
 const budget = require("./models/budget.js");
 
@@ -28,6 +29,7 @@ app.post("/budgets", (req, res) => {
   console.log(req.body);
   budget.push(req.body);
   console.log(budget);
+  res.redirect("/budgets");
 });
 
 // New
@@ -39,3 +41,10 @@ app.get("/budgets/new", (req, res) => {
 app.get("/budgets/:index", (req, res) => {
   res.render("show", { budgets: budget[req.params.index] });
 });
+
+// bankAccount
+// let bankAccount = document.getElementById("amount");
+
+// if (bankAccount.innerHTML >= 1000) {
+//   bankAccount.style.backgroundColor = "green";
+// }
