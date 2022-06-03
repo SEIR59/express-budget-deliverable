@@ -6,15 +6,17 @@ const budget = require('./models/budget.js')
 app.use(express.urlencoded({ extended: false}));
 
 
-app.get('/bugets', (req, res) => {
-
+app.get('/budgets', (req, res) => {
+res.render('index', {
+    budgetAll: budget
+})
 });
 
-app.get('/bugets/new', (req, res) => {
+app.get('/budgets/new', (req, res) => {
     
 });
 
-app.get('/bugets/:index', (req, res) => {
+app.get('/budgets/:index', (req, res) => {
     
 });
 
