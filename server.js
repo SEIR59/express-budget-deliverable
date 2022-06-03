@@ -9,9 +9,15 @@ app.listen(3000, () => {
 app.use(express.urlencoded({extended: false }))
 app.use(express.static('public'))
 
-app.get('/', (req, res) => {
+app.get('/budget', (req, res) => {
     res.render('index', {
         Budget: budget
+    })
+})
+
+app.get('/budget/:index', (req, res) => {
+    res.render('show', {
+        Budget: budget[req.params.index]
     })
 })
 

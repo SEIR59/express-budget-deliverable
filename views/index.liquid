@@ -15,7 +15,7 @@
         {% for expense in Budget %}
         <tr>
             <td>{{expense.date}}</td>
-            <td><a href="">{{expense.name}}</a></td>
+            <td><a href="/budget/{{forloop.index0}}">{{expense.name}}</a></td>
             <td>{{expense.amount}}</td>
         </tr>
         {% endfor %}
