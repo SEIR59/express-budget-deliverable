@@ -19,11 +19,37 @@
   <body>
     <div class="container">
       <h1>{{ budgets.name }}</h1>
+      <a href="/budgets"><button>Back</button></a>
     </div>
-    <table>
-      {{
-        allBudgets.date
-      }}
-    </table>
+
+    <div>
+      <b>date</b><br />
+      {{ budgets.date }}
+    </div>
+    <br />
+
+    <div>
+      <b>name</b><br />
+      {{ budgets.name }}
+    </div>
+    <br />
+
+    <div>
+      <b>from</b><br />
+      {{ budgets.from }}
+    </div>
+    <br />
+
+    <div>
+      <b>amount</b><br />
+      {{ budgets.amount }}
+    </div>
+    <br />
+
+    <div>
+      <b>tags</b><br />
+      {{ budgets.tags }}
+    </div>
+    <br />
   </body>
 </html>
