@@ -11,6 +11,22 @@
 <body>
     <div class="container">
         <h1>Budget All</h1>
+        <table>
+            <!-- <th>I am a table head</th> -->
+            {% for budget in allBudget %}
+            <tr>
+                <td>
+                    {{budget.date}}
+                </td>
+                <td>
+                    <a href="">{{budget.name}}</a>
+                </td>
+                <td>
+                    {{budget.amount}}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
     </div>
 </body>
 </html>
