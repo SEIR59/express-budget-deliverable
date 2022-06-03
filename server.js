@@ -1,13 +1,11 @@
 const express = require('express')
-const Budget = require('./models/budget.js')
+
 const app = require('liquid-express-views')(express())
 
+const Budget = require('./models/budget.js')
 const budget = require('./models/budget.js')
 
-app.use((req, res, next) =>{
-    console.log('I run for all routes')
-    next()
-})
+
 
 app.use(express.urlencoded({extended: false}))
 
