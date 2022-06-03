@@ -15,3 +15,16 @@ app.get('/budgets', (req, res) => {
         'index'
     )
 })
+
+app.get('/budgets/new', (req, res) => {
+    res.render(
+        'new'
+    )
+})
+
+app.get('/budgets/:index', (req, res) => {
+    res.render(
+        'show'
+    )
+})
+
