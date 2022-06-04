@@ -11,7 +11,14 @@
 <body>
   <div class="container">
       <h1>Budgtr ALL</h1>
-      <h4>Bank Account: {{ bankAccount }} </h4>
+      <h4
+        {%if bankAccount >= 1000 %}
+    style="background-color: green;"
+    {% elsif bankAccount <= 0 %}
+    style="background-color: red;"
+    {% else %}
+    {%endif%} >
+        Bank Account: {{ bankAccount }} </h4>
 
       <table>
        
