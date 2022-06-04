@@ -51,4 +51,5 @@ const totalBudget = (total) => {
       bankAccount += parseInt(budget[i].amount)
   }
   
+
 }
