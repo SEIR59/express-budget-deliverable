@@ -1,38 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-   <div class="container">
-        <h1>{{showBud.name}}</h1>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    </head>
+    <body>
+        <h1>Income/Expense Item</h1>
         <table>
-            <td> Date: </td>
-            
-            <td> Name: </td>
-            
-            <td> From: </td>
-            
-            <td> Amount: </td>
-            
-            <td> Tags: </td>
-        </table>
-        <table>
-            <td> {{showBud.date}} </td>
-            
-            <td> <a href="">{{showBud.name}}</a></td>
-            
-            <td>{{showBud.from}}</td>
-            
+            <td>{{ showBud.date }}</td>
+            <td><a href="/index/{{
+                forloop.index0}}">{{ showBud.name }} 
+            </a></td>
             <td>{{showBud.amount}}</td>
-            
+            <td>{{showBud.from}} </td> 
             <td>{{showBud.tags}}</td>
+           
         </table>
-   </div>
-    <a href="/index/"><button type="submit">Back to Main</button></a>
-</body>
-</html>
+       
+        <a href="/index{{
+            forloop.index0}}"> Back to index
+        </a>        
+        
+    </body>
+</html> 

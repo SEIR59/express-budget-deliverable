@@ -3,23 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
 </head>
 <body>
-    <div>
-        
-        <h1>Add New Income/Expense </h1>
-        <form action="/index" method="POST">
-            date:<input type="text" placeholder="date"><br>
-            name:<input type="text" placeholder="name"><br>
-            amount:<input type="number" placeholder="amount"><br>
-            from:<input type="text" placeholder="from"><br>
-            <input type="submit" placeholder="submit">
-        </form>
-    
-    </div>
+    <h1>Add New Expense/Income</h1>
+    <form action="/index" method="post">
+       <table>
+       <td> <input type="text" placeholder="date" name="date"></td><br>
+       <td><input type="text" placeholder="name" name="name"></td><br>
+       <td>  <input type="number" placeholder="amount" name="amount"></td><br>
+        <td> <input type="text" placeholder="from" name="from"></td>
+        <td> <input type="text" placeholder="tags" name="tags"></td>
+        </table>
+        <input type="submit" value="submit">
+    </form>
 </body>
 </html>

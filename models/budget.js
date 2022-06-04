@@ -1,4 +1,12 @@
+// let account = 0
 
+
+// //create a func to iterate through budget and add the amounts together
+// const balance = (arr) => {
+// for(let i=0; i<arr.length; i++){
+// account = account + arr[i].amount
+// }
+// }
 
 const budget = [
   {
@@ -72,6 +80,7 @@ const budget = [
     tags: ["pets"]
   }
 ]
+
 
 
 module.exports = budget

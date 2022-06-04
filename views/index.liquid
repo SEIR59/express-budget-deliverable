@@ -1,42 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+
 </head>
-
 <body>
-
-    <div class="container">
-
-        <h1>Budgtr ALL</h1>
-        <nav>
-        <a href="/index/new/"><button>New</button></a>
-        </nav>
-        {% for showBud in myBudget %}
-
-
-        {{forloop.budget}}
+    <h1>Budget App</h1>
+    <h4>Bank Balance: ${{account}}</h4>
+    <nav>
+        <a href="/index/new"><button> Create a New Item </button></a>
+    </nav>
+        {% for showBud in theBud %}
         <table>
-            <td> {{showBud.date}} </td>
-            
-            <td> <a href="/index/{{forloop.index0}}">{{showBud.name}}</a></td>
-            
-            <td>{{showBud.from}}</td>
-            
+            <td>{{ showBud.date }}</td>
+            <td><a href="/index/{{
+                forloop.index0}}">{{ showBud.name }} 
+            </a></td>
             <td>{{showBud.amount}}</td>
-            
+            <td>{{showBud.from}} </td> 
             <td>{{showBud.tags}}</td>
+           
         </table>
-
-
         {% endfor %}
-    </div>
+    
+   
+    
 </body>
-
 </html>
