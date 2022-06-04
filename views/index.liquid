@@ -6,11 +6,16 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
-
+<link rel="stylesheet" href="../public/style.css" type="style/css">
 </head>
 <body>
     <h1>Budget App</h1>
-    <h4>Bank Balance: ${{account}}</h4>
+    <h4>
+        {% if account < 0 %}
+        Bank Balance: $<span style="color: red;">{{account}}</span>
+   {% else %}
+   Bank Balance: $<span style="color: green">{{account}}</span>
+   {% endif %}</h4>
     <nav>
         <a href="/index/new"><button> Create a New Item </button></a>
     </nav>
@@ -20,7 +25,11 @@
             <td><a href="/index/{{
                 forloop.index0}}">{{ showBud.name }} 
             </a></td>
-            <td>{{showBud.amount}}</td>
+            <td>{% if showBud.amount < 0 %}
+                 <br><p style="color: red;">{{showBud.amount}}</p>
+            {% else %}
+             <br><p style="color: green">{{showBud.amount}}</p>
+            {% endif %}</td>
             <td>{{showBud.from}} </td> 
             <td>{{showBud.tags}}</td>
            

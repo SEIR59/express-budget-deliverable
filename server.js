@@ -5,20 +5,14 @@ const { send } = require('express/lib/response')
 const res = require('express/lib/response')
 const app = require('liquid-express-views')(express())
 const budget = require('./models/budget')
+const sumall = budget.map(item => item.amount).reduce((prev, curr) => prev + curr, 0);
+console.log(sumall);
+let account = sumall 
 
-
-let account = 0
 
 
 // //create a func to iterate through budget and add the amounts together
-const balance = (arr) => {
-for(let i=0; i<arr.length; i++){
-account = account + arr[i].amount
-}
-}
 
-balance(budget)
-console.log(account)
 
 // const bodyParser = require('body-parser')
 app.use(express.static('public'))
@@ -29,6 +23,7 @@ app.use(express.static('public'))
 
 app.use('/index', (res, req, next) => {
     console.log('i run for all routes')
+    
     next()
 })
 
@@ -40,19 +35,27 @@ app.get('/', (req, res) => {
 
 
 app.get('/index/', (req, res) => {
-    res.render(
+    
+    
+     res.render(
         'index',
         {
             theBud: budget,
             account: account
         }
     )
+    
 })
 
 app.post('/index', (req, res) => {
    
-    budget.push(req.body);
-    console.log(req.body)
+   
+    
+    budget.push(req.body)
+    
+     
+    console.log(budget)
+    
     res.redirect('/index')
 })
 
@@ -70,6 +73,24 @@ app.get('/index/:show', function(req, res){
 
 app.listen(3000, () => {
     console.log('youre on 3000 bitch')
+    
 })
 
 
+
+const balance = (arr) => {
+    for(let i=0; i<arr.length; i++){
+    account = account + arr[i].amount
+    }
+    }
+
+//     const addValue = (arr) => {
+    
+//     newVar = budget.at(-1)
+//     account = account + newVar.amount 
+// }
+    
+
+    
+    // console.log(budget)
+    // console.log(account)

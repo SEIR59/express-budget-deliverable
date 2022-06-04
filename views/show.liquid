@@ -12,14 +12,18 @@
             <td><a href="/index/{{
                 forloop.index0}}">{{ showBud.name }} 
             </a></td>
-            <td>{{showBud.amount}}</td>
+            <td>{% if showBud.amount < 0 %}
+                <span style="color: red;">{{showBud.amount}}</span>
+           {% else %}
+           <span style="color: green">{{showBud.amount}}</span>
+           {% endif %}</td>
             <td>{{showBud.from}} </td> 
             <td>{{showBud.tags}}</td>
            
         </table>
        
         <a href="/index{{
-            forloop.index0}}"> Back to index
+            forloop.index0}}"><button>Back to index</button>
         </a>        
         
     </body>
