@@ -11,6 +11,11 @@ app.get('/budget', (req, res) => {
         budget: budget,
     })
 })
+app.get('/budget/:play', (req, res) => {
+    res.render('show', {
+        somethingToshow: budget[req.params.play]
+    })
+})
 
 
 

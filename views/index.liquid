@@ -15,7 +15,7 @@
             {% for data in budget %}
             <tr>
                 <td>{{data.date}}</td>
-                <td><a>{{data.name}}</a></td>
+                <td><a href="show/{{forloop.index0}}">{{data.name}}</a></td>
                 <td>{{data.amount}}</td>
             </tr>
             {%endfor%}

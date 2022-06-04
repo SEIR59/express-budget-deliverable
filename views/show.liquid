@@ -4,13 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
-    <link rel="stylesheet" href="/normalize.css">
-    <link rel="stylesheet" href="/skeleton.css">
+    <title>Document</title>
+
 </head>
 <body>
+    <div class="container"></div>
+    <h1>Retirement</h1>
+    <a href="/budget"><button>Back</button></a>
+    <table>
+        {% for data in Retirement %}
+        <tr>
+            <td>{{data.date}}</td>
+            <td><a href="show/{{forloop.index0}}">{{data.name}}</a></td>
+            <td>{{data.amount}}</td>
+        </tr>
+        {%endfor%}
+    </table>    
     
 </body>
 </html>
