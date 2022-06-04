@@ -9,16 +9,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
 </head>
 <body>
-    <div class="container"></div>
+
+    <div class="container">
     <h1>Budgtr</h1>
+    <h3 
+    {% if bank >= 1000%}
+    style = 'background-color: aqua'
+    {% elsif bank <= 0%}
+    style = 'background-color: red'
+    {%else%}
+    {%endif%}
+    >{{bank}}</h3>
         <table>
             {% for data in budget %}
             <tr>
                 <td>{{data.date}}</td>
-                <td><a href="show/{{forloop.index0}}">{{data.name}}</a></td>
+                <td><a href="budget/{{forloop.index0}}">{{data.name}}</a></td>
                 <td>{{data.amount}}</td>
             </tr>
             {%endfor%}
         </table>
+        
+        <a href="/budget/new"><button>New Transaction</button></a>
+        </div>
 </body>
 </html>

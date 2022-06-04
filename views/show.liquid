@@ -11,17 +11,15 @@
 </head>
 <body>
     <div class="container"></div>
-    <h1>Retirement</h1>
     <a href="/budget"><button>Back</button></a>
-    <table>
-        {% for data in Retirement %}
-        <tr>
-            <td>{{data.date}}</td>
-            <td><a href="show/{{forloop.index0}}">{{data.name}}</a></td>
-            <td>{{data.amount}}</td>
-        </tr>
-        {%endfor%}
-    </table>    
+    <div class="container">
+        <h1>{{budget.name}}</h1>
+        <p>Date: {{budget.date}}<p>
+        <p>Name: {{budget.name}}<p>
+        <p>From: {{budget.from}}<p>
+        <p>Amount: {{budget.amount}}<p>
+        <p>Tags: {%for tag in budget.tags%}{{tag}},{%endfor%}<p>
+    </div>
     
 </body>
 </html>
