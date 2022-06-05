@@ -1,4 +1,5 @@
 const express = require('express');
+const budget = require('./Models/budget');
 const app = require("liquid-express-views")(express());
 const Budget = require('./Models/budget');
 
@@ -15,6 +16,18 @@ app.get('/budget', (req, res) =>{
     res.render('index', {
         allBudgets:Budget
     });
+});
+
+app.get('/budget/new', (req, res) => {
+    res.render('new',
+        {
+            
+        })
+});
+
+app.post('/budget/new', (req, res) => {
+    Budget.push(req.body)
+    res.redirect("/budget")
 });
 
 app.get('/budget/:index', (req, res) => {
