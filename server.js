@@ -2,6 +2,7 @@ const express = require("express");
 const app = require("liquid-express-views")(express());
 const budget = require("./models/budget.js");
 
+app.use(express.static('public'))
 app.use(express.urlencoded({extended:false}));
 
 app.listen(3000, () => {
@@ -27,3 +28,6 @@ app.get("/budgets/:index", (req, res) => {
         budgets: budget[req.params.index]
     })
 })
+
+
+
