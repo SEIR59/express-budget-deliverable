@@ -11,27 +11,18 @@ app.use((req, res, next) => {
 
 app.use(express.urlencoded({extended:false}));
 
-app.get('/', (req, res) =>{
-    res.send('Hello');
-});      
-
 app.get('/budget', (req, res) =>{
     res.render('index', {
         allBudgets:Budget
     });
 });
-/*
-app.get('/budgets/new', function(req, res){
-    res.render('');
-});      
 
-app.get('/budgets/:index', function(req, res){
-    res.render('');
-});      
-
-app.post('/budgets', function(req, res){
-    
-});      */
+app.get('/budget/:index', (req, res) => {
+    res.render('show',
+        {
+            budget: Budget[req.params.index],
+        })
+});
 
 app.listen(port, () => {
     console.log('listening');
