@@ -29,5 +29,7 @@ app.get("/budgets/:index", (req, res) => {
     })
 })
 
-
+app.post("/budgets", (req, res) => {
+    res.redirect('/budgets')
+} )
 
