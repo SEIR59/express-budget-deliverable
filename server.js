@@ -2,6 +2,8 @@ const express = require('express')
 const app = require('liquid-express-views')(express())
 const budget = require('./models/budget')
 
+app.use(express.urlencoded({extended:false}))
+app.use(express.static('public'))
 
 app.get('/', (req, res) => {
     res.render('index', {
