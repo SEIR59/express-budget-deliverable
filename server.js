@@ -1,6 +1,6 @@
 const express = require('express')
 const app = require('liquid-express-views')(express())
-const budget = require('./models/budget')
+const budget = require('./models/budget.js')
 
 app.use(express.urlencoded({extended:false}))
 app.use(express.static('public'))
@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 
 app.get('/:index', (req, res) => {
     res.render('show', {
-        budgetItem: budget[req.params.index]
+        allItems: budget[req.params.index]
     })
 })
 

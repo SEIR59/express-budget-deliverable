@@ -5,32 +5,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
     <title>Show</title>
 </head>
 
 <body>
     <div class="container">
-        <h1>{{ budgetItem.name }}</h1>
-        <table>
-            {% for budgetItem in allItems %}
-            <tr>
-                <td>
-                    {{ budgetItem.date }}
-                </td>
-                <td>
-                    <a href="/">{{ budgetItem.name }}</a>
-                </td>
-                <td>
-                    {{ budgetItem.amount }}
-                </td>
-            </tr>
-            {% endfor %}
-        </table>
-        <a href="/">
-            <button type="">Back</button>
-        </a>
+        <h1>{{ allItems.name }}</h1>
+        date: {{allItems.date}}
+        <br />
+        name: {{allItems.name}}
+        <br />
+        from: {{allItems.from}}
+        <br />
+        amount: {{allItems.amount}}
+        <br />
+        tags: {{allItems.tags}}
     </div>
 </body>
 
