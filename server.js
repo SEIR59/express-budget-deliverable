@@ -17,3 +17,13 @@ app.get('/budgets', (req, res) => {
         allBudgets: budget
     })
 })
+
+app.get('/budgets/new', (req, res) => {
+    res.render('new')
+})
+
+app.get("/budgets/:index", (req, res) => {
+    res.render("show", {
+        budgets: budget[req.params.index]
+    })
+})
