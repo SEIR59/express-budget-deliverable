@@ -13,6 +13,16 @@
                 <h1>Budgtr</h1>
                 <table>
                     {%for budget in allBudgets%}
+                        <a href="/budget/{{forloop.index0}}"></a>
+                        {% assign theBankAccount = theBankAccount | plus: budget.amount%}
+                    {%endfor%}
+                    {%if theBankAccount >= 0%}
+                        <p style="background-color: green">Account:${{theBankAccount}}
+                    {%endif%}
+                    {%if theBankAccount <= 0%}
+                        <p style="background-color: red">Account:${{theBankAccount}}
+                    {%endif%}
+                    {%for budget in allBudgets%}
                         <tr>
                             <td>{{budget.date}} </td>
                             <td><a href="/budget/{{forloop.index0}}">{{budget.name}}</a></td>

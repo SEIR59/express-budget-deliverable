@@ -12,9 +12,11 @@ app.use((req, res, next) => {
 
 app.use(express.urlencoded({extended:false}));
 
+let bankAccount = 0;
 app.get('/budget', (req, res) =>{
     res.render('index', {
-        allBudgets:Budget
+        allBudgets:Budget,
+        theBankAccount:bankAccount,
     });
 });
 
@@ -36,6 +38,8 @@ app.get('/budget/:index', (req, res) => {
             budget: Budget[req.params.index],
         })
 });
+
+
 
 app.listen(port, () => {
     console.log('listening');
