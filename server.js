@@ -19,9 +19,18 @@ app.get('/budgets', (req, res) => {
     })
 })
 
+
 app.get('/budgets/new', (req, res) => {
     res.render('new')
 })
+
+app.post("/budgets/", (req, res) => {
+    console.log(req.body)
+    budget.push(req.body)
+    res.redirect('/budgets')
+})
+
+
 
 app.get("/budgets/:index", (req, res) => {
     res.render("show", {
@@ -29,7 +38,7 @@ app.get("/budgets/:index", (req, res) => {
     })
 })
 
-app.post("/budgets", (req, res) => {
-    res.redirect('/budgets')
-} )
+
+
+
 

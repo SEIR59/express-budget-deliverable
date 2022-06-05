@@ -13,6 +13,10 @@
     <div class="container">
     <h1>Budgtr</h1>
 
+    <form action="/budgets/new" method="GET">
+        <input type="Submit" value="Create"><a href="/budgets/new"/></a>
+        </form>
+
     <table>
         {% for budgets in allBudgets %}
         <tr>
@@ -22,10 +26,6 @@
 
         </tr>
             {% endfor %}
-
-            <form action="/budgets/new" method="POST">
-                <input type="Submit" value="Create"><a href="/budgets"></a>
-                </form>
 
     </table>
     </div>
