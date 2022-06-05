@@ -1,4 +1,4 @@
-const Budget = [
+const budget = [
   {
     date: "April 1",
     name: "Income",
@@ -71,4 +71,4 @@ const Budget = [
   }
 ]
 
-module.exports = Budget
+module.exports = budget

@@ -11,3 +11,9 @@ app.listen(3000, () => {
 app.get('/', (req, res) => {
     res.send("Hello World!")
 })
+
+app.get('/budgets', (req, res) => {
+    res.render("index", {
+        allBudgets: budget
+    })
+})
