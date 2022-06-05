@@ -28,6 +28,7 @@ app.get('/budget/:index', (req, res) => {
 
 app.post('/budget', (req,res) => {
     res.send(req.body)
+    budget.push(req.body)
 })
 
 
