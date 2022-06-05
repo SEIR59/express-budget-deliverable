@@ -9,6 +9,12 @@ app.get('/', (req, res) => {
     })
 })
 
+app.get('/:index', (req, res) => {
+    res.render('show', {
+        budgetItem: budget[req.params.index]
+    })
+})
+
 app.listen(3000, () => {
     console.log('listening on port 3000')
 })
