@@ -15,9 +15,9 @@ app.get('/', (req, res) =>{
     res.send('Hello');
 });      
 
-app.get('/budgets/', (req, res) =>{
+app.get('/budgets', (req, res) =>{
     res.render('index');
-});      
+});
 /*
 app.get('/budgets/new', function(req, res){
     res.render('');
