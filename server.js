@@ -6,8 +6,8 @@ const res = require('express/lib/response')
 const app = require('liquid-express-views')(express())
 const budget = require('./models/budget')
 const sumall = budget.map(item => item.amount).reduce((prev, curr) => prev + curr, 0);
-console.log(sumall);
-let account = sumall 
+
+let account = 0
 
 
 
@@ -35,7 +35,7 @@ app.get('/', (req, res) => {
 
 
 app.get('/index/', (req, res) => {
-    
+    balance(budget)
     
      res.render(
         'index',
@@ -48,14 +48,7 @@ app.get('/index/', (req, res) => {
 })
 
 app.post('/index', (req, res) => {
-   
-   
-    
     budget.push(req.body)
-    
-     
-    console.log(budget)
-    
     res.redirect('/index')
 })
 
@@ -79,8 +72,10 @@ app.listen(3000, () => {
 
 
 const balance = (arr) => {
+        account = 0
     for(let i=0; i<arr.length; i++){
-    account = account + arr[i].amount
+        
+        account = account + parseInt(arr[i].amount)
     }
     }
 
@@ -89,8 +84,9 @@ const balance = (arr) => {
 //     newVar = budget.at(-1)
 //     account = account + newVar.amount 
 // }
-    
+balance(budget)
+console.log(account)
 
-    
+    // addEventListener('onload', balance)
     // console.log(budget)
     // console.log(account)
