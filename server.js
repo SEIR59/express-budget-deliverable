@@ -15,8 +15,10 @@ app.get('/', (req, res) =>{
     res.send('Hello');
 });      
 
-app.get('/budgets', (req, res) =>{
-    res.render('index');
+app.get('/budget', (req, res) =>{
+    res.render('index', {
+        allBudgets:Budget
+    });
 });
 /*
 app.get('/budgets/new', function(req, res){
