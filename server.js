@@ -1,9 +1,12 @@
 const express = require('express')
 const app = require('liquid-express-views')(express())
+const budget = require('./models/budget')
 
 
 app.get('/', (req, res) => {
-    res.send('hi')
+    res.render('index', {
+        allItems: budget
+    })
 })
 
 app.listen(3000, () => {
