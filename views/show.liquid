@@ -9,10 +9,12 @@
 		/>
 		<link
 			rel="stylesheet"
+            type="text/css"
 			href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css"
 		/>
 		<link
 			rel="stylesheet"
+            type="text/css"
 			href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
 		/>
 		<title>Budgtr show page</title>
@@ -21,44 +23,40 @@
 		<div class="container">
 			<h1>{{ budgets.name }}</h1>
 
-            <a href="/budgets">Back</a>
-             <br />
-             <br />
-             <br />
-            
+			<input type="Submit" value="Back"><a href="/budgets"></a>
+			<br />
+			<br />
+			<br />
 
 			<div>
-			    <em><b>Date</b></em>
-                <br />
-				{{ budgets.date }}
+				<em><b>Date</b></em>
+				<br />
+				<blockquote>{{ budgets.date }}</blockquote>
 			</div>
 
-            <div>
-			    <em><b>name</b></em>
-                <br />
-				{{ budgets.name }}
+			<div>
+				<em><b>name</b></em>
+				<br />
+				<blockquote>{{ budgets.name }}</blockquote>
 			</div>
 
-            <div>
-			    <em><b>from</b></em>
-                <br />
-				{{ budgets.from }}
+			<div>
+				<em><b>from</b></em>
+				<br />
+				<blockquote>{{ budgets.from }}</blockquote>
 			</div>
 
-            <div>
-			    <em><b>amount</b></em>
-                <br />
-				{{ budgets.amount }}
+			<div>
+				<em><b>amount</b></em>
+				<br />
+				<blockquote>{{ budgets.amount }}</blockquote>
 			</div>
 
-            <div>
-			    <em><b>tags</b></em>
-                <br />
-				{{ budgets.tags }}
+			<div>
+				<em><b>tags</b></em>
+				<br />
+				<blockquote>{{ budgets.tags }}</blockquote>
 			</div>
-            
-        
-			
 		</div>
 	</body>
 </html>
