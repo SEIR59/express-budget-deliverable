@@ -26,7 +26,12 @@
                         <tr>
                             <td>{{budget.date}} </td>
                             <td><a href="/budget/{{forloop.index0}}">{{budget.name}}</a></td>
-                            <td>{{budget.amount}}</td>
+                            {%if budget.amount <= 0>%}
+                            <td style="background-color: red">{{budget.amount}}</td>
+                            {%endif%}
+                            {%if budget.amount > 0>%}
+                            <td style="background-color: green">{{budget.amount}}</td>
+                            {%endif%}
                         </tr>
                     {%endfor%}
                 </table>
