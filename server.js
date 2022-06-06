@@ -20,6 +20,13 @@ app.get('/budget', (req, res) => {
         
     })
 })
+app.post('/budget', (req, res) => {
+    budget.push(req.body)
+    
+    console.log(req)
+    res.redirect('budget')
+})
+
 
 app.get('/budget/:key', (req, res) => {
 
