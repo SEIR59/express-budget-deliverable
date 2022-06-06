@@ -3,6 +3,10 @@ const express = require('express')
 const app = require("liquid-express-views")(express());
 
 const budget = require('./models/budget.js')
+let bankAccount = 0;
+for (let i = 0; i < budget.length; i++) {
+    bankAccount += budget[i].amount
+}
 
 app.use((req, res, next) => {
     //  console.log('I run for all routes');
@@ -17,12 +21,12 @@ app.use(express.static('public'));
 app.get('/budget', (req, res) => {
     res.render('index', {
         budget: budget,
-        
+        bankAccount: bankAccount,
     })
 })
 app.post('/budget', (req, res) => {
     budget.push(req.body)
-    
+    bankAccount += parseInt(req.body.amount)
     console.log(req)
     res.redirect('budget')
 })
