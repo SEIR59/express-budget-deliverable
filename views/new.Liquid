@@ -9,6 +9,15 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>New budget</h1>
+        <!--  NOTE: action will be the route, method will be the HTTP verb-->
+        <form action="/budgets" method="POST">
+            Name: <input type="text" name="name" /><br/>
+            Date: <input type="text" name="date" /><br/>
+            From: <input type="text" name="from" /><br/> 
+            Amount: <input type="text" name="amount" /><br/>
+            Tags: <input type="text" name="tags" /><br/>
+            <input type="submit" value="Add Budget"/>
+        </form>
 </body>
 </html>

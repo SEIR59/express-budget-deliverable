@@ -71,4 +71,4 @@ let budgets = [
   }
 ]
 
-module.exports = budget
+module.exports = budgets
