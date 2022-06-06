@@ -18,7 +18,9 @@ app.get("/budgets/new", (req, res) => {
 });
 
 app.get("/budgets/:index", (req, res) => {
-  res.render("show");
+  res.render("show", {
+    budgetName: budget[req.params.index],
+  });
 });
 
 app.listen(port, () => {
