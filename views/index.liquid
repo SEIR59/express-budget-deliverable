@@ -21,10 +21,11 @@
             <td><a href="http://localhost:3000/budgets/{{forloop.index0}}">{{budget.name}}</a></td>
             <td>{{budget.from}}</td>
             <td>{{budget.amount}}</td>
-            <td>{{budget.tags}}</td>
+            <td>{{budget.tags | join: ', '}}</td>
             </tr>
 
         {% endfor %}
     </table>
+    <button><a href="/budgets/new">Add New Item</a></button>
 </body>
 </html>
