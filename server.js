@@ -1,14 +1,16 @@
 const express = require("express");
 const app = require("liquid-express-views")(express());
 const port = 3000;
-const budget = require("./budget");
+let budget = require("./models/budget.js");
 
 app.get("/", (req, res) => {
   res.send("First HTML Page Renders Fine");
 });
 
 app.get("/budgets", (req, res) => {
-  res.render("index");
+  res.render("index", {
+    theBudgets: budget,
+  });
 });
 
 app.get("/budgets/new", (req, res) => {
