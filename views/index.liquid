@@ -8,12 +8,21 @@
 
     <link rel="stylesheet" href="/normalize.css">
     <link rel="stylesheet" href="/skeleton.css">
+    <style>
+        .container{
+            display:flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
         <h1>Budgtr All</h1>
-    </div>
+        {{ bankAccount }}
+    
     <table>
         {% for budget in budgets%}
         <tr>
@@ -26,6 +35,7 @@
 
         {% endfor %}
     </table>
-    <button><a href="/budgets/new">Add New Item</a></button>
+    <a href="/budgets/new"><button>Add New Item</button></a>
+</div>
 </body>
 </html>

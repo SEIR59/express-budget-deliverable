@@ -2,15 +2,18 @@ const express = require('express')
 const app = require('liquid-express-views')(express())
 
 const budget = require('./models/budget.js')
-
+let bankAccount = 1000
 app.use(express.static('public'))
 app.use(express.urlencoded({extended:false}));
 
 
 app.get('/budgets', (req,res)=>{
-
+    let backgroundColor
+    bankAccount < 0 ? backgroundColor = 'red' : bankAccount < 1000 ? backgroundColor= 'blue' : backgroundColor = 'green'
+    
     res.render('index', {
         budgets: budget,
+        bankAccount: `<h2 style="background:${backgroundColor}">Current Savings: ${bankAccount}</h2>`
     })
 })
 
