@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/skeleton.css">
     <title>Document</title>
 </head>
 <body>
@@ -13,6 +13,17 @@
         
     
     <h1>Budgtr ALL</h1>
+    {% assign bankAccount = 0 %}
+        {% for budgetItem in allItems %}
+          {% assign bankAccount = bankAccount | plus: budgetItem.amount %}
+        {% endfor %}
+
+    {%if bankAccount < 0 %} {% assign color = "red" %}
+        {% else %} {% assign color = "blue" %}
+    {% endif %}
+    <h3 style="background-color: {{color}}">BankAccount: {{bankAccount}}</h3>
+
+
     <table>
         {% for budgetItem in allItems %}
       <tr>
@@ -28,6 +39,11 @@
       </tr>
       {% endfor %}
     </table>
+
+    <form action="/new">
+        <input type="submit" value="New" />
+      </form>
+
     </div>
 </body>
 </html>

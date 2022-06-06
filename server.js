@@ -26,6 +26,11 @@ app.get('/:index', (req, res) => {
     })
 })
 
+app.post('/', (req, res) => {
+    budget.push(req.body)
+    res.redirect("/")
+})
+
 app.listen(3000, () => {
     console.log('listening on port 3000')
 })
