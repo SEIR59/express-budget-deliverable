@@ -14,7 +14,12 @@ app.get('/budgets', (req,res)=>{
 
 app.get('/budgets/new')
 
-app.get('/budgets/:index')
+app.get('/budgets/:index', (req,res)=>{
+    res.render('show',{
+        item: budget[req.params.index],
+        itemTags: budget[req.params.index].tags.join(', ')
+    })
+})
 
 app.post('/budgets')
 

@@ -5,26 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
     <link rel="stylesheet" href="/normalize.css">
     <link rel="stylesheet" href="/skeleton.css">
 </head>
-
 <body>
     <div class="container">
-        <h1>Budgtr All</h1>
-    </div>
-    <table>
-        {% for budget in budgets%}
-        <tr>
-            <td>{{budget.date}}</td>
-            <td><a href="http://localhost:3000/budgets/{{forloop.index0}}">{{budget.name}}</a></td>
-            <td>{{budget.from}}</td>
-            <td>{{budget.amount}}</td>
-            <td>{{budget.tags}}</td>
-            </tr>
+        <h1>{{item.name}}</h1>
+        <button><a href="http://localhost:3000/budgets">Back</a></button>
 
-        {% endfor %}
-    </table>
+        <h2>Date: {{ item.date}}</h2>
+        <h2>From: {{item.from}}</h2>
+        <h2>Amount: {{item.amount}}</h2>
+        <h2>Tags: {{itemTags}}</h2>
+    </div>
+
+
 </body>
 </html>
