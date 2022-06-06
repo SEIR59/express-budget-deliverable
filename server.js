@@ -8,6 +8,13 @@ const budget = require('./models/budget.js')
 
 app.use(express.static('public'))
 
+app.use(express.urlencoded({ extended: false })) // body-parser
+
+app.post('/', (req, res) => {
+    budget.push(req.body);
+    res.redirect('/');
+})
+
 app.get('/', (req, res) => {
     res.render(
         'index', {
@@ -24,6 +31,11 @@ app.get('/show/:budgetIndex', (req, res) => {
     )
 })
 
+app.get('/new/', (req, res) =>{
+    res.render(
+        'new'
+    )
+})
 
 app.listen(port, ()=> {
     console.log("Now Listening to Port 3000 :)")
