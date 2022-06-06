@@ -3,9 +3,12 @@ const app = require('liquid-express-views')(express())
 const port = 3000
 const budgets = require('./models/budgets.js')
 
-app.use(express.static(__dirname))
+app.use(express.static('public'))
+
+app.use(express.urlencoded({extended:false}))
 
 app.post('/budgets', (req, res) => {
+    console.log(req.body)
     budgets.push(req.body)
     res.redirect('/budgets')
 })
