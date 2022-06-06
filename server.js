@@ -22,3 +22,16 @@ app.get("/budgets/:index", (req, res) => {
 app.listen(port, () => {
   console.log("This Port is working Fine");
 });
+
+app.use((req, res, next) => {
+  console.log("Testing Middleware");
+  next();
+});
+
+app.use(express.static("public"));
+
+app.use(express.urlencoded({ extended: false }));
+
+app.post("/budgets", (req, res) => {
+  res.send("First Post Test of Syntax");
+});
