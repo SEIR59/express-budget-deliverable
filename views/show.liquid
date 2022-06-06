@@ -10,17 +10,13 @@
 </head>
 <body>
     <div class="container">
-        <h1>MY Budget</h1>
-        <table>
-            {% for budget in budgets %}
-            <tr>
-                <td>{{ budget.date }}</td>
-                <td><a href="/show/{{ forloop.index0 }}">{{ budget.name }}</a></td>
-                <td>{{ budget.amount }}</td>
-            </tr>
-
-            {% endfor %}
-        </table>
+        <h1>{{ budgets.name }}</h1>
+        <a href="/" class="button">Back</a><br><b>Date:</b><br>
+        {{ budgets.date }}<br><b>Name:</b><br>
+        {{ budgets.name }}<br><b>From:</b><br>
+        {{ budgets.from }}<br><b>Amount:</b><br>
+        {{ budgets.amount }}<br><b>Tags:</b><br>
+        {{ budgets.tags }}
     </div>
 </body>
 </html>

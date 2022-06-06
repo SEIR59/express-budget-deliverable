@@ -16,6 +16,15 @@ app.get('/', (req, res) => {
     )
 })
 
+app.get('/show/:budgetIndex', (req, res) => {
+    res.render(
+        'show', {
+            budgets: budget[req.params.budgetIndex]
+        }
+    )
+})
+
+
 app.listen(port, ()=> {
     console.log("Now Listening to Port 3000 :)")
 })
