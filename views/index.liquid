@@ -12,6 +12,16 @@
     <div class="container">
       <h1>Budget View All</h1>
       <a href="/budgets/new"><button>New Item</button></a>
+
+      {% for budget in theBudgets%} {% assign accountBalance = accountBalance |
+      plus: budget.amount%} {% endfor %}
+      <div class="popup" onclick="myFunction()">
+        <button>
+          Account Balance
+        <!-- </button> was going to do a pop window display to show Account Balance -->
+        <span class="popuptext" id="myPopup"></span>
+      </div>
+
       <table>
         {% for budget in theBudgets%}
         <tr>

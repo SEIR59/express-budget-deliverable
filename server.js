@@ -2,6 +2,7 @@ const express = require("express");
 const app = require("liquid-express-views")(express());
 const port = 3000;
 let budget = require("./models/budget.js");
+let bankAccount = 0;
 
 app.get("/", (req, res) => {
   res.send("First HTML Page Renders Fine");
@@ -10,6 +11,7 @@ app.get("/", (req, res) => {
 app.get("/budgets", (req, res) => {
   res.render("index", {
     theBudgets: budget,
+    accountBalance: bankAccount,
   });
 });
 
