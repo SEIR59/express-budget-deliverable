@@ -37,5 +37,7 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
 
 app.post("/budgets", (req, res) => {
-  res.send("First Post Test of Syntax");
+  budget.push(req.body);
+  res.redirect("/budgets");
+  console.log("First Post Test of Syntax");
 });
