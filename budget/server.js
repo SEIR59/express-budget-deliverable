@@ -1,12 +1,20 @@
 const express = require('express')
 const res = require('express/lib/response')
 const app = require('liquid-express-views')(express())
-const port = 3201
+const Budget = require('./models/budget.js')
+app.use(express.static('public'))
+const port = 3203
 
 app.listen(port, () => {
 	console.log(`Listening on port ${port}!!`)
 })
 
-app.get('/', (req, res) => {
-	res.send('Welcome to the Express Budget App!')
+app.get('/budgets', (req, res) => {
+	res.render('index',{ budgets: Budget})
+})
+
+app.get('/budgets/:indexOfBudgetData', (req, res) => {
+	res.render('show', {
+		item: budgetData[req.params.indexOfBudgetData],
+	})
 })
