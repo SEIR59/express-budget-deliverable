@@ -30,5 +30,5 @@ app.post('/budgets', (req, res) => {
 	//console.log(req.body)
 	Budget.push(req.body)
 	//console.log(Budget)
-	res.render('index', { budgets: Budget })
+	res.redirect('/budgets')
 })
