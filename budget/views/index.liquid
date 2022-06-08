@@ -7,11 +7,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
 <link rel="stylesheet" href="/css/app.css">
-
+<title>Budget ALL</title>
 </head>
 <body>
     <div class="container">
         <h1>Budget ALL</h1>
+        <a href="/budgets/new" class="button">New</a>
         <table>
         {% for budget in budgets %}
         <tr>
@@ -22,6 +23,6 @@
         </tr>
         {% endfor %}
         </table>
-        </div>
+    </div>
 </body>
 </html>
