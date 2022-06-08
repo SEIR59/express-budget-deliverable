@@ -1,6 +1,7 @@
 const express = require("express")
 const app = require("liquid-express-views")(express())
 const budget = require('./models/budget.js')
+let bankAccount = 0;
 
 app.listen(3000, () => {
     console.log("Working")
@@ -11,7 +12,8 @@ app.use(express.static('public'))
 
 app.get('/budget', (req, res) => {
     res.render('index', {
-        Budget: budget
+        Budget: budget,
+        bankAccount: bankAccount
     })
 })
 

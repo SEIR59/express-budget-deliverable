@@ -12,6 +12,17 @@
     <div class="container">
     <h1>Budgtr ALL</h1>
     <a href="/budget/new"><button>New Item</button></a>
+    {% for budget in allBudget %}
+      <!-- assign here is to do the math -->
+      {% assign bankAccount = bankAccount | plus: budget.amount%}
+      {% endfor %}
+      {% if bankAccount <= 0 %}
+      <h4 style="background-color: red; color: white;">Bank account ${{bankAccount}}</h4>
+      {% elsif bankAccount > 1000 %}
+      <h4 style="background-color: greenyellow;">Bank account ${{bankAccount}}</h4>
+      {% else %}
+      <h4>Bank account ${{bankAccount}}</h4>
+      {% endif %}
     <table>
         {% for expense in Budget %}
         <tr>
