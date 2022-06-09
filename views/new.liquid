@@ -6,9 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/normalize.css">
-<link rel="stylesheet" href="/skeleton.css">
+    <link rel="stylesheet" href="/skeleton.css">
 </head>
 <body>
-    
+    <div class="container">
+    <h1>Add New Budget</h1>
+    <form action="/budgets" method="POST">
+        <input type="text" placeholder="Date" name="date" />
+        <br>
+        <br>
+        <input type="text" placeholder="Name" name="name" />
+        <br>
+        <br>
+        <input type="text" placeholder="From" name="from" />
+        <br>
+        <br>
+        <input type="text" placeholder="Amount" name="amount" />
+        <br>
+        <br>
+        <input type="text" placeholder="Tags" name="tags" />
+        <br>
+        <br>
+        <input type="submit" value="Create Budget"/>
+    </form>  
+    </div>
 </body>
 </html>
