@@ -1,0 +1,18 @@
+<body>
+    <div class="container">
+      <h1>Budgtr ALL</h1>
+      <table>
+        {% for data in budget %}
+        <tr>
+            <td>{{ data.date }}</td>
+             <td><a>{{ data.name }}</a></td>
+             <td>{{data.amount }}</td>
+             <td><a href="/budget/{{ forloop.index0 }}">{{ data.name }}</a></td>
+
+          </tr>
+          {% endfor %}
+      </table>
+      <a href="/budget/new">Create a New Budget</a>
+    </div>
+</body>
+</html>
