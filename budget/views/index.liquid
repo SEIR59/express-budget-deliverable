@@ -7,11 +7,21 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
 <link rel="stylesheet" href="/css/app.css">
+<style>
+
+</style>
 <title>Budget ALL</title>
 </head>
 <body>
     <div class="container">
         <h1>Budget ALL</h1>
+        {% if cashAmount >= 1000 %}
+            <h3 style="background-color: blue; color: white; width: 450px">Money in the bank: {{cashAmount}}</h3>
+        {%elsif cashAmount <= 0 %}
+            <h3 style="background-color: red; color: white; width: 450px">Money in the bank: {{cashAmount}}</h3>
+        {% else %}
+            <h3>Money in the bank: {{cashAmount}}</h3>
+        {%endif%}
         <a href="/budgets/new" class="button">New</a>
         <table>
         {% for budget in budgets %}
@@ -22,6 +32,7 @@
             <td>{{ budget.amount }}</td>
         </tr>
         {% endfor %}
+
         </table>
     </div>
 </body>
