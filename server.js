@@ -1,7 +1,7 @@
 const express = require('express');
 const budget = require('./models/budget.js')
 const app = require("liquid-express-views")(express())
-const port = 3000
+
 
 app.use(express.static('public'))
 
@@ -17,9 +17,16 @@ app.get('/' , (req, res) =>{
 
 
 app.get('/budget', (req, res) => {
-    res.render("index")
+    res.render("index", {
+        budget: budget
+    })
 })
 
+app.get('/budget/:indexOfBudgetArray', (req, res) => {
+    res.render("show", {
+        budgetItem: budget[req.params.indexOfBudgetArray] 
+    })
+ })
 
 app.listen(port, () =>{
     console.log("listen to port 3000")

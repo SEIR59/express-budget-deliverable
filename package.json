@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/poojad2101/express-budget-deliverable#readme",
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "liquid": "^5.1.1",
+    "liquid-express-views": "^1.0.8"
   },
   "keywords": []
 }
