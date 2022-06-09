@@ -19,6 +19,11 @@ app.get('/', (req, res) => {
     })
 })
 
+app.post('/create', (req, res) => {
+    Budget.push(req.body)
+    res.redirect('/')
+})
+
 app.get('/:id', (req, res) => {
     res.render('show', {
         Budget: Budget,
@@ -26,6 +31,11 @@ app.get('/:id', (req, res) => {
     })
 })
 
+
 app.post('/next', (req, res) => {
     res.redirect('/')
+})
+
+app.post('/new', (req, res) => {
+    res.render('new')
 })
