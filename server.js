@@ -11,9 +11,21 @@ app.listen(port, ()=>{
 })
 
 app.use(express.urlencoded({extended:false}));
+app.use(express.static('public'));
 
 app.get('/', (req, res) => {
     res.render('index', {
         Budget: Budget
     })
+})
+
+app.get('/:id', (req, res) => {
+    res.render('show', {
+        Budget: Budget,
+        number: req.params.id
+    })
+})
+
+app.post('/next', (req, res) => {
+    res.redirect('/')
 })
