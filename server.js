@@ -3,6 +3,7 @@ const app = require("liquid-express-views")(express())
 const Budget = require('./models/budget.js')
 
 
+
 let port = 3000
 
 app.listen(port, ()=>{
@@ -12,5 +13,7 @@ app.listen(port, ()=>{
 app.use(express.urlencoded({extended:false}));
 
 app.get('/', (req, res) => {
-    res.render('index')
+    res.render('index', {
+        Budget: Budget
+    })
 })
