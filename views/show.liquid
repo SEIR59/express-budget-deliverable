@@ -9,6 +9,17 @@
     <link rel="stylesheet" href="/skeleton.css">
 </head>
 <body>
+<div class="container">
+
+    <h1>{{budgets.name}}</h1>
+    <button><a href="/budgets">Back</a></button>
+    <h3>Date:</h3> {{budgets.date}}<br/>
+    <h3>Name:</h3> {{budgets.name}} <br/>
+    <h3>From:</h3> {{budgets.from}} <br/>
+    <h3>Amount:</h3>  ${{budgets.amount}}.00<br/>
+    <h3>Tags:</h3> {{budgets.tags[0]}} , {{budgets.tags[1]}} <br/>
+
+</div>
     
 </body>
 </html>
